@@ -1,4 +1,4 @@
-package app.twitterist.org.twitterist.Login;
+package app.twitterist.org.twitterist.login;
 
 /**
  * Created by marcowuthrich on 02.09.15.

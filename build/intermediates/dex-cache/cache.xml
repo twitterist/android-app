@@ -2,25 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jar="/Users/marcowuthrich/AndroidStudioProjects/android-sdk-mac_x86/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-8a69cddffbc444984bd7a5a85877a866b751eca3.jar" />
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-e59ed3061f3b54a1be120fd0992f944fc3f6e3df.jar" />
     </item>
     <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/libs/internal_impl-21.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-f70fff3d9886887b5c8c6120cffa2634fedbd9d9.jar" />
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-5df8756419ebc27ee5a61ad6d0db376a5dc87308.jar" />
     </item>
     <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-2b43514466b64579f492bc7fcfd00e6339e245e4.jar" />
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-3e620f79317f38e8c2513735ba73e9ea8ac93e9a.jar" />
+    </item>
+    <item
+        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
+        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-ae18a02c153510a564900bcf10694f78650d7a02.jar" />
     </item>
     <item
         jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/libs/twitter4j-core-4.0.4.jar"
@@ -28,13 +35,6 @@
         revision="21.1.2"
         sha1="f4ac5989c7be37249dfe310bf78ba69773ebce2d">
         <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/twitter4j-core-4.0.4-65a710d5730971fd6e5a8cb06ea3026d6c520c00.jar" />
-    </item>
-    <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/android-sdk-mac_x86/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-65e023dd8f4b754202f7a8fde9f2fa8bf54d4db0.jar" />
     </item>
 
 </items>
