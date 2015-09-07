@@ -1,7 +1,6 @@
 package app.twitterist.org.twitterist;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import app.twitterist.org.twitterist.login.LoginFragment;
-import app.twitterist.org.twitterist.login.TwitterLoginMainActivity;
 
 public class DrawerMainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -44,36 +42,6 @@ public class DrawerMainActivity extends ActionBarActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
-    @Override
-    public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
-        FragmentManager fragmentManager = getSupportFragmentManager();
-
-        switch (position) {
-            case 0:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                        .commit();
-                break;
-            case 1:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, LoginFragment.newInstance("a","b"))
-                        .commit();
-
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                Intent intent = new Intent(getApplicationContext(), TwitterLoginMainActivity.class);
-                startActivity(intent);
-                break;
-        }
-    }
-
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
@@ -96,6 +64,34 @@ public class DrawerMainActivity extends ActionBarActivity
                 break;
         }
     }
+
+    @Override
+    public void onNavigationDrawerItemSelected(int position) {
+        // update the main content by replacing fragments
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        switch (position) {
+            case 0:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, LoginFragment.newInstance("a", "b"))
+                        .commit();
+                break;
+        }
+    }
+
 
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();

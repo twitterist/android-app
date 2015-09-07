@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import app.twitterist.org.twitterist.R;
@@ -33,12 +34,13 @@ import twitter4j.conf.ConfigurationBuilder;
  * create an instance of this fragment.
  */
 public class LoginFragment extends Fragment {
+
     protected View mView;
     // Constants
     /**
      * Register your here app https://dev.twitter.com/apps/new and get your
      * consumer key and secret
-     * */
+     */
     static String TWITTER_CONSUMER_KEY = "LsCQaPOwd8k7WkyRFRZF4Q";
     static String TWITTER_CONSUMER_SECRET = "KJbJu5IQrlwxW7Cwnax3mMzAc4j3n6Wd2dG125srgk";
 
@@ -56,7 +58,8 @@ public class LoginFragment extends Fragment {
     static final String URL_TWITTER_OAUTH_TOKEN = "oauth_token";
 
     // Buttons
-    Button btnLoginTwitter;
+    ImageButton imageBtnLoginTwitter;
+    Button btnTwitterLogin;
 
     // Progress dialog
     ProgressDialog pDialog;
@@ -116,45 +119,63 @@ public class LoginFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        super.onCreateView(inflater,container,savedInstanceState);
+        super.onCreateView(inflater, container, savedInstanceState);
         // IF SDK > 8
         if (android.os.Build.VERSION.SDK_INT > 8) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
 
+        this.mView = inflater.inflate(R.layout.fragment_login, container, false);
+
+        // All UI elements
+        imageBtnLoginTwitter = (ImageButton) mView.findViewById(R.id.imageBtnLoginWithTwitter);
+        btnTwitterLogin = (Button) mView.findViewById(R.id.btnTwitterLogin);
+
+        imageBtnLoginTwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginToTwitter();
+            }
+        });
+
+        btnTwitterLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginToTwitter();
+            }
+        });
+
+
+
+
+
+
+
+
         cd = new ConnectionDetector(getActivity().getApplicationContext());
 
         // Check if Internet present
-        //TODO
-/*        if (!cd.isConnectingToInternet()) {
+
+        if (!cd.isConnectingToInternet()) {
             // Internet Connection is not present
-            alert.showAlertDialog(TwitterLoginMainActivity.this, "Internet Verbindung Error",
+            alert.showAlertDialog(getActivity().getApplicationContext(), "Internet Verbindung Error",
                     "Bitte Verbindung zum Internet überprüfen", false);
             // stop executing code by return
-            return;
+            //TODO Exit
         }
 
         // Check if twitter keys are set
-        if(TWITTER_CONSUMER_KEY.trim().length() == 0 || TWITTER_CONSUMER_SECRET.trim().length() == 0){
+        if (TWITTER_CONSUMER_KEY.trim().length() == 0 || TWITTER_CONSUMER_SECRET.trim().length() == 0) {
             // Internet Connection is not present
-            alert.showAlertDialog(TwitterLoginMainActivity., "Twitter oAuth tokens", "Please set your twitter oauth tokens first!", false);
+            alert.showAlertDialog(getActivity().getApplicationContext(), "Twitter oAuth tokens", "Please set your twitter oauth tokens first!", false);
             // stop executing code by return
-            return;
-        }*/
-
-
-
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-
-        this.mView = view;
-
-        // All UI elements
-        btnLoginTwitter = (Button) mView.findViewById(R.id.btnLoginTwitter);
+            //TODO Exit
+        }
 
         // Shared Preferences
         mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences(
@@ -163,17 +184,10 @@ public class LoginFragment extends Fragment {
         /**
          * Twitter login button click event will call loginToTwitter() function
          * */
-        btnLoginTwitter.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View arg0) {
-                // Call login twitter function
-                loginToTwitter();
-            }
-        });
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        return mView;
 
 
     }
@@ -202,19 +216,19 @@ public class LoginFragment extends Fragment {
             Toast.makeText(getActivity().getApplicationContext(),
                     "Du bist schon eingelogt", Toast.LENGTH_LONG).show();
 
-            btnLoginTwitter.setVisibility(View.GONE);
+            imageBtnLoginTwitter.setVisibility(View.GONE);
 
         }
     }
 
     /**
      * Function to update status
-     * */
+     */
     class updateTwitterStatus extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
-         * */
+         */
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -227,7 +241,7 @@ public class LoginFragment extends Fragment {
 
         /**
          * getting Places JSON
-         * */
+         */
         protected String doInBackground(String... args) {
             Log.d("Tweet Text", "> " + args[0]);
             String status = args[0];
@@ -259,7 +273,7 @@ public class LoginFragment extends Fragment {
          * After completing background task Dismiss the progress dialog and show
          * the data in UI Always use runOnUiThread(new Runnable()) to update UI
          * from background thread, otherwise you will get error
-         * **/
+         **/
         protected void onPostExecute(String file_url) {
             // dismiss the dialog after getting all products
             pDialog.dismiss();
@@ -277,23 +291,12 @@ public class LoginFragment extends Fragment {
         }
 
     }
+
     private boolean isTwitterLoggedInAlready() {
         // return twitter login status from Shared Preferences
         return mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
     }
 
-
-
-/*    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }*/
 
     @Override
     public void onDetach() {

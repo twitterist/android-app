@@ -7,18 +7,31 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/Loginlayout">
         <!-- Twitter Login Button -->
-        <Button
-            android:id="@+id/btnLoginTwitter"
+
+
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:id="@+id/imageBtnLoginWithTwitter"
+            android:src="@drawable/ic_twitter_logo_blue"
+            android:layout_gravity="center"
+            android:background="@drawable/roundedbutton"
+            android:contentDescription="@string/beschreibung_twitter_logo"
             android:layout_centerVertical="true"
-            android:layout_gravity="left|top"
-            android:text="Login with Twitter" />
+            android:layout_centerHorizontal="true" />
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTwitterLogin"
+            android:text="@string/loginBtnText"
+            android:inputType="text"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="82dp" />
     </RelativeLayout>
 
 
