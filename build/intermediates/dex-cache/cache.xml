@@ -2,27 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-3e620f79317f38e8c2513735ba73e9ea8ac93e9a.jar" />
-    </item>
-    <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-ae18a02c153510a564900bcf10694f78650d7a02.jar" />
-    </item>
-    <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/libs/twitter4j-core-4.0.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f4ac5989c7be37249dfe310bf78ba69773ebce2d">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/twitter4j-core-4.0.4-65a710d5730971fd6e5a8cb06ea3026d6c520c00.jar" />
-    </item>
-    <item
         jar="/Users/marcowuthrich/AndroidStudioProjects/android-sdk-mac_x86/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -35,6 +14,27 @@
         revision="21.1.2"
         sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
         <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-5df8756419ebc27ee5a61ad6d0db376a5dc87308.jar" />
+    </item>
+    <item
+        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
+        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-ae18a02c153510a564900bcf10694f78650d7a02.jar" />
+    </item>
+    <item
+        jar="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/classes-3e620f79317f38e8c2513735ba73e9ea8ac93e9a.jar" />
+    </item>
+    <item
+        jar="/Users/marcowuthrich/.gradle/caches/modules-2/files-2.1/org.twitter4j/twitter4j-core/4.0.4/1f3c896c7b2f20c51103078ccf0bc2ea97ac012a/twitter4j-core-4.0.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1f3c896c7b2f20c51103078ccf0bc2ea97ac012a">
+        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/Twitterist/app/build/intermediates/pre-dexed/debug/twitter4j-core-4.0.4-eefb63d8dad1cdc9479f9674b7255848777ac0af.jar" />
     </item>
 
 </items>
