@@ -32,6 +32,15 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="82dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:id="@+id/btnLogout"
+            android:layout_above="@+id/btnTwitterLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="37dp" />
     </RelativeLayout>
 
 

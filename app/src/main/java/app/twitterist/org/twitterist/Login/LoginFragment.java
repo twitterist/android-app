@@ -59,7 +59,8 @@ public class LoginFragment extends Fragment {
 
     // Buttons
     ImageButton imageBtnLoginTwitter;
-    Button btnTwitterLogin;
+    Button btnTwitterLogin, btnTwitterLogout;
+
 
     // Progress dialog
     ProgressDialog pDialog;
@@ -288,6 +289,8 @@ public class LoginFragment extends Fragment {
                     //  txtUpdate.setText("");
                 }
             });
+            btnTwitterLogin.setVisibility(View.INVISIBLE);
+            btnTwitterLogout.setVisibility(View.VISIBLE);
         }
 
     }
