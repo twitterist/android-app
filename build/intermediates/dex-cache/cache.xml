@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="C:\Users\marco.wuethrich\.gradle\caches\modules-2\files-2.1\org.twitter4j\twitter4j-core\4.0.4\1f3c896c7b2f20c51103078ccf0bc2ea97ac012a\twitter4j-core-4.0.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1f3c896c7b2f20c51103078ccf0bc2ea97ac012a">
+        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\twitter4j-core-4.0.4-a49ef9ea90a6a781b178686a59f785997a5d073a.jar" />
+    </item>
+    <item
         jar="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -16,13 +23,6 @@
         <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-47c63f9630cfdae4766110c20dda4ca7e89cbb32.jar" />
     </item>
     <item
-        jar="C:\Users\marco.wuethrich\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-2826aadff689568bd1fed0422854056be4d6c1cf.jar" />
-    </item>
-    <item
         jar="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -30,11 +30,11 @@
         <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\classes-beda93ce11631e8c552aa80a4ab00edd14409526.jar" />
     </item>
     <item
-        jar="C:\Users\marco.wuethrich\.gradle\caches\modules-2\files-2.1\org.twitter4j\twitter4j-core\4.0.4\1f3c896c7b2f20c51103078ccf0bc2ea97ac012a\twitter4j-core-4.0.4.jar"
+        jar="C:\Users\marco.wuethrich\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1f3c896c7b2f20c51103078ccf0bc2ea97ac012a">
-        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\twitter4j-core-4.0.4-a49ef9ea90a6a781b178686a59f785997a5d073a.jar" />
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-2826aadff689568bd1fed0422854056be4d6c1cf.jar" />
     </item>
 
 </items>

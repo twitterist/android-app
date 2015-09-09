@@ -93,7 +93,7 @@ public class DrawerMainActivity extends ActionBarActivity
                 //About us
                 break;
             case 5:
-                //Login
+                //login
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, LoginFragment.newInstance("a", "b"))
                         .commit();

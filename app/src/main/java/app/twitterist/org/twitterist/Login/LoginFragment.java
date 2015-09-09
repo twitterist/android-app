@@ -178,7 +178,7 @@ public class LoginFragment extends Fragment {
 
         }
 
-        //Login Button Listener
+        //login Button Listener
         imageBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,7 +247,7 @@ public class LoginFragment extends Fragment {
 
     private void loginToTwitter() {
         boolean isLoggedIn = mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
-        Log.d("Login", "Boolean: isLoogenIn: " + isLoggedIn);
+        Log.d("login", "Boolean: isLoogenIn: " + isLoggedIn);
 
         if (!isLoggedIn) {
             final ConfigurationBuilder builder = new ConfigurationBuilder();
@@ -279,7 +279,7 @@ public class LoginFragment extends Fragment {
                  **/
 
 
-                Toast.makeText(getActivity(), "Login Try", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "login Try", Toast.LENGTH_LONG).show();
             } catch (TwitterException e) {
                 e.printStackTrace();
             }

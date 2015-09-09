@@ -4,13 +4,17 @@
     android:id="@+id/urlContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingTop="10dp"
+    android:paddingRight="28dp"
+    android:paddingLeft="28dp"
 
     android:orientation="horizontal"
     android:background="@color/twitter_Background_Blue">
 
     <WebView
         android:id="@+id/webView"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true" />
