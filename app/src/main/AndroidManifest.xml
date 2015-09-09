@@ -30,6 +30,7 @@
                     android:scheme="oauth" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

@@ -72,19 +72,28 @@ public class DrawerMainActivity extends ActionBarActivity
 
         switch (position) {
             case 0:
+                //Home
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
                 break;
             case 1:
+                //Twitter Analysis
                 break;
             case 2:
+                //History
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, LoginFragment.newInstance("a", "b"))
+                        .commit();
                 break;
             case 3:
+                //Twitter
                 break;
             case 4:
+                //About us
                 break;
             case 5:
+                //Login
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, LoginFragment.newInstance("a", "b"))
                         .commit();

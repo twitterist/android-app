@@ -22,4 +22,21 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="beschreibung_twitter_logo">Twitter Logo Blauer Vogel</string>
     <string name="loginBtnText">Login with Twitter</string>
+
+    <!-- Twitter Configurations -->
+    <string name="twitter_callback">oauth://t4jsample</string>
+    <string name="twitter_consumer_key">LsCQaPOwd8k7WkyRFRZF4Q</string>
+    <string name="twitter_consumer_secret">KJbJu5IQrlwxW7Cwnax3mMzAc4j3n6Wd2dG125srgk</string>
+    <string name="twitter_oauth_verifier">oauth_verifier</string>
+    <!-- End Configurations -->
+
+    <!-- Strings used in app ui-->
+    <string name="hello">Hello, </string>
+    
+    <!-- Coolors -->
+    <color name="twitter_Background_Blue">#c0deed</color>
+    <color name="twitter_Verified_Blue">#1dcaff</color>
+    <color name="twitter_Logo_Blue">#00aced</color>
+    <color name="twitter_Dark_Blue">#0084b4</color>
+    
 </resources>
