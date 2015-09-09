@@ -70,33 +70,47 @@ public class DrawerMainActivity extends ActionBarActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
 
+        //Drawer position beginn by 0
         switch (position) {
             case 0:
-                //Home
+            //Home
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
+                //set Title
+                onSectionAttached(1);
                 break;
             case 1:
-                //Twitter Analysis
+            //Twitter Analysis
+
+                //set Title
+                onSectionAttached(2);
                 break;
             case 2:
-                //History
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, LoginFragment.newInstance("a", "b"))
-                        .commit();
+            //History
+
+                //set Title
+                onSectionAttached(3);
                 break;
             case 3:
-                //Twitter
+            //Twitter
+
+                //set Title
+                onSectionAttached(4);
                 break;
             case 4:
-                //About us
+            //About us
+
+                //set Title
+                onSectionAttached(5);
                 break;
             case 5:
-                //login
+            //login
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, LoginFragment.newInstance("a", "b"))
                         .commit();
+                //set Title
+                onSectionAttached(6);
                 break;
         }
     }

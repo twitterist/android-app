@@ -11,18 +11,42 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
+import app.twitterist.org.twitterist.DrawerMainActivity;
 import app.twitterist.org.twitterist.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link WebViewFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link WebViewFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class WebViewFragment extends Fragment {
+
+    // inner Class MyWebViewClient
+    class MyWebViewClient extends WebViewClient {
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+            if (url.contains(getResources().getString(R.string.twitter_callback))) {
+                Uri uri = Uri.parse(url);
+
+				/* Sending results back */
+                String verifier = uri.getQueryParameter(getString(R.string.twitter_oauth_verifier));
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra(getString(R.string.twitter_oauth_verifier), verifier);
+                getActivity().setResult(Activity.RESULT_OK, resultIntent);
+
+                Log.d("Login", "Results: " + verifier);
+                /* closing webview */
+                //start Home Intent
+                Intent intent = new Intent(getActivity(), DrawerMainActivity.class);
+                startActivity(intent);
+                Toast.makeText(getActivity(), "Login succsessfuly", Toast.LENGTH_LONG).show();
+
+                return true;
+            }
+            return false;
+
+        }
+    }
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,7 +56,12 @@ public class WebViewFragment extends Fragment {
     private String param1URL;
     private String mParam2;
 
+    // Listener
     private OnFragmentInteractionListener mListener;
+
+    // UI
+    private WebView webView;
+    private View mView;
 
 
     // TODO: Rename and change types and number of parameters
@@ -49,11 +78,6 @@ public class WebViewFragment extends Fragment {
         // Required empty public constructor
     }
 
-    private WebView webView;
-    private View mView;
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +85,6 @@ public class WebViewFragment extends Fragment {
             param1URL = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        getActivity().setTitle("login");
     }
 
     @Override
@@ -95,41 +118,10 @@ public class WebViewFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
 
-    class MyWebViewClient extends WebViewClient {
-
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-
-            if (url.contains(getResources().getString(R.string.twitter_callback))) {
-                Uri uri = Uri.parse(url);
-
-				/* Sending results back */
-                String verifier = uri.getQueryParameter(getString(R.string.twitter_oauth_verifier));
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra(getString(R.string.twitter_oauth_verifier), verifier);
-                getActivity().setResult(getActivity().RESULT_OK, resultIntent);
-
-				/* closing webview */
-                getActivity().finish();
-                return true;
-            }
-            return false;
-        }
-    }
 
 }

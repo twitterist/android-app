@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.os.StrictMode;
 import android.os.StrictMode.ThreadPolicy;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,7 +16,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import app.twitterist.org.twitterist.R;
@@ -56,7 +55,6 @@ public class LoginFragment extends Fragment {
 
     private static SharedPreferences mSharedPreferences;
 
-    private TextView userName;
     private ImageButton imageBtnLogin;
 
     private String consumerKey = null;
@@ -65,6 +63,7 @@ public class LoginFragment extends Fragment {
     private String oAuthVerifier = null;
 
     protected View mView;
+    FragmentManager fragmentManager;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -126,7 +125,6 @@ public class LoginFragment extends Fragment {
 
         // UI Elements
         imageBtnLogin = (ImageButton) mView.findViewById(R.id.imageBtnLogin);
-        userName = (TextView) mView.findViewById(R.id.username);
 
         /* Check if required twitter keys are set */
         if (TextUtils.isEmpty(consumerKey) || TextUtils.isEmpty(consumerSecret)) {
@@ -143,39 +141,36 @@ public class LoginFragment extends Fragment {
 
 		/*  if already logged in, then hide login layout and show share layout */
         if (isLoggedIn) {
-
+            Log.d("Login", "User is Login");
+            imageBtnLogin.setVisibility(View.GONE);
             String username = mSharedPreferences.getString(PREF_USER_NAME, "");
-            userName.setText(getResources().getString(R.string.hello)
-                    + username);
+            Toast.makeText(getActivity().getApplicationContext(), "Willkommen " + username, Toast.LENGTH_LONG).show();
 
+            //User is not login
         } else {
+            Log.d("Login", "User isn't Login");
+            imageBtnLogin.setVisibility(View.VISIBLE);
+
 
             Uri uri = getActivity().getIntent().getData();
 
             if (uri != null && uri.toString().startsWith(callbackUrl)) {
 
                 String verifier = uri.getQueryParameter(oAuthVerifier);
-
                 try {
-
                     // Getting oAuth authentication token
                     AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
-
                     // Getting user id form access token
                     long userID = accessToken.getUserId();
                     final User user = twitter.showUser(userID);
                     final String username = user.getName();
-
                     // save updated token
                     saveTwitterInfo(accessToken);
 
-                    userName.setText(getString(R.string.hello) + username);
-
                 } catch (Exception e) {
-                    Log.e("Failed to login Twitter!!", e.getMessage());
+                    Log.e("Login", e.getMessage());
                 }
             }
-
         }
 
         //login Button Listener
@@ -198,16 +193,6 @@ public class LoginFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
@@ -230,7 +215,8 @@ public class LoginFragment extends Fragment {
             e.putString(PREF_KEY_OAUTH_SECRET, accessToken.getTokenSecret());
             e.putBoolean(PREF_KEY_TWITTER_LOGIN, true);
             e.putString(PREF_USER_NAME, username);
-            e.commit();
+            e.apply();
+            Log.d("Login", e.toString());
 
         } catch (TwitterException e1) {
             e1.printStackTrace();
@@ -247,7 +233,7 @@ public class LoginFragment extends Fragment {
 
     private void loginToTwitter() {
         boolean isLoggedIn = mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
-        Log.d("login", "Boolean: isLoogenIn: " + isLoggedIn);
+        Log.d("Login", "Boolean: isLoogenIn: " + isLoggedIn);
 
         if (!isLoggedIn) {
             final ConfigurationBuilder builder = new ConfigurationBuilder();
@@ -258,20 +244,14 @@ public class LoginFragment extends Fragment {
             final TwitterFactory factory = new TwitterFactory(configuration);
             twitter = factory.getInstance();
 
-            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             try {
-
-
                 requestToken = twitter.getOAuthRequestToken(callbackUrl);
-/*
-                final Intent intent = new Intent(getActivity(), WebViewActivity.class);
-                intent.putExtra(WebViewActivity.EXTRA_URL, requestToken.getAuthenticationURL());
-                startActivityForResult(intent, WEBVIEW_REQUEST_CODE);
-*/
+
+                //start WebView Fragment
+                fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.startLogin_layout, WebViewFragment.newInstance(requestToken.getAuthenticationURL(), "b"))
                         .commit();
-
                 /**
                  *  Loading twitter login page on webview for authorization
                  *  Once authorized, results are received at onActivityResult
@@ -279,10 +259,16 @@ public class LoginFragment extends Fragment {
                  **/
 
 
-                Toast.makeText(getActivity(), "login Try", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Ladevorgang", Toast.LENGTH_SHORT).show();
             } catch (TwitterException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("Login", "RequestCode: "+requestCode+"\nResultCode: "+resultCode+"\nIntent data: "+ data.toString());
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
