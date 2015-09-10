@@ -33,12 +33,12 @@ public class WebViewFragment extends Fragment {
                 resultIntent.putExtra(getString(R.string.twitter_oauth_verifier), verifier);
                 getActivity().setResult(Activity.RESULT_OK, resultIntent);
 
-                Log.d("Login", "Results: " + verifier);
+                Log.d("login", "Results: " + verifier);
                 /* closing webview */
                 //start Home Intent
                 Intent intent = new Intent(getActivity(), DrawerMainActivity.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "Login succsessfuly", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "login succsessfuly", Toast.LENGTH_LONG).show();
 
                 return true;
             }

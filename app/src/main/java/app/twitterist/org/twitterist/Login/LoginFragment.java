@@ -141,14 +141,14 @@ public class LoginFragment extends Fragment {
 
 		/*  if already logged in, then hide login layout and show share layout */
         if (isLoggedIn) {
-            Log.d("Login", "User is Login");
+            Log.d("login", "User is login");
             imageBtnLogin.setVisibility(View.GONE);
             String username = mSharedPreferences.getString(PREF_USER_NAME, "");
             Toast.makeText(getActivity().getApplicationContext(), "Willkommen " + username, Toast.LENGTH_LONG).show();
 
             //User is not login
         } else {
-            Log.d("Login", "User isn't Login");
+            Log.d("login", "User isn't login");
             imageBtnLogin.setVisibility(View.VISIBLE);
 
 
@@ -168,7 +168,7 @@ public class LoginFragment extends Fragment {
                     saveTwitterInfo(accessToken);
 
                 } catch (Exception e) {
-                    Log.e("Login", e.getMessage());
+                    Log.e("login", e.getMessage());
                 }
             }
         }
@@ -216,7 +216,7 @@ public class LoginFragment extends Fragment {
             e.putBoolean(PREF_KEY_TWITTER_LOGIN, true);
             e.putString(PREF_USER_NAME, username);
             e.apply();
-            Log.d("Login", e.toString());
+            Log.d("login", e.toString());
 
         } catch (TwitterException e1) {
             e1.printStackTrace();
@@ -233,7 +233,7 @@ public class LoginFragment extends Fragment {
 
     private void loginToTwitter() {
         boolean isLoggedIn = mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
-        Log.d("Login", "Boolean: isLoogenIn: " + isLoggedIn);
+        Log.d("login", "Boolean: isLoogenIn: " + isLoggedIn);
 
         if (!isLoggedIn) {
             final ConfigurationBuilder builder = new ConfigurationBuilder();
@@ -268,7 +268,7 @@ public class LoginFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d("Login", "RequestCode: "+requestCode+"\nResultCode: "+resultCode+"\nIntent data: "+ data.toString());
+        Log.d("login", "RequestCode: "+requestCode+"\nResultCode: "+resultCode+"\nIntent data: "+ data.toString());
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
