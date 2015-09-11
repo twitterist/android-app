@@ -25,12 +25,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
+                <data android:host="t4jsample" />
                 <data
-                    android:host="t4jsample"
-                    android:scheme="oauth" />
+                    android:host="callback"
+                    android:scheme="x-oauthflow-twitter" />
+                <!-- android:scheme="oauth" -->
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

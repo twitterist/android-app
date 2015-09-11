@@ -32,5 +32,15 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/twitter_logout_button"
+            android:background="@color/twitter_Background_Blue"
+            android:id="@+id/imageBtnLogout"
+            android:layout_marginBottom="43dp"
+            android:layout_above="@+id/imageBtnLogin"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 </FrameLayout>

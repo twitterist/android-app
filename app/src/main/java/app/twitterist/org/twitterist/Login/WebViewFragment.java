@@ -15,37 +15,55 @@ import android.widget.Toast;
 
 import app.twitterist.org.twitterist.DrawerMainActivity;
 import app.twitterist.org.twitterist.R;
+import twitter4j.TwitterException;
+import twitter4j.auth.AccessToken;
+import twitter4j.auth.RequestToken;
 
 public class WebViewFragment extends Fragment {
 
     // inner Class MyWebViewClient
     class MyWebViewClient extends WebViewClient {
 
+        private RequestToken rToken;
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
 
-            if (url.contains(getResources().getString(R.string.twitter_callback))) {
-                Uri uri = Uri.parse(url);
+            Uri uri = UserData.getUri();
+            Toast.makeText(getActivity(),"Uri:: "+uri.toString(),Toast.LENGTH_LONG).show();
+
+            if (uri != null && uri.toString().startsWith(getString(R.string.TWITTER_CALLBACK_URL))) {
+
 
 				/* Sending results back */
-                String verifier = uri.getQueryParameter(getString(R.string.twitter_oauth_verifier));
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra(getString(R.string.twitter_oauth_verifier), verifier);
-                getActivity().setResult(Activity.RESULT_OK, resultIntent);
+                String verifier = uri.getQueryParameter(getString(R.string.URL_TWITTER_OAUTH_VERIFIER));
+                AccessToken at=null;
+                try {
+                    at = UserData.getTwitter().getOAuthAccessToken(rToken, getString(R.string.URL_TWITTER_OAUTH_VERIFIER));
+                } catch (TwitterException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                UserData.getTwitter().setOAuthAccessToken(at);
 
                 Log.d("login", "Results: " + verifier);
+
                 /* closing webview */
                 //start Home Intent
                 Intent intent = new Intent(getActivity(), DrawerMainActivity.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "login succsessfuly", Toast.LENGTH_LONG).show();
+
+                if(UserData.isLogin()){
+                    Toast.makeText(getActivity(),"Welcome: "+UserData.getUsername(),Toast.LENGTH_LONG).show();
+                }
 
                 return true;
             }
             return false;
 
         }
+
     }
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -123,5 +141,11 @@ public class WebViewFragment extends Fragment {
         public void onFragmentInteraction(Uri uri);
     }
 
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+    }
 
 }
