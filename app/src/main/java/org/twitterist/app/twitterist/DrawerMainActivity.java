@@ -1,4 +1,4 @@
-package org.twitterist.app;
+package org.twitterist.app.twitterist;
 
 import android.app.Activity;
 import android.os.Bundle;
