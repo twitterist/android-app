@@ -18,8 +18,19 @@ android {
         }
     }
 }
+repositories {
+    jcenter()
+}
 
 dependencies {
     compile 'com.android.support:appcompat-v7:21.0.0'
     compile 'com.android.support:support-v4:21.0.0'
+<<<<<<< Updated upstream
+=======
+    compile('com.mopub:mopub-sdk:3.10.0@aar') {
+        transitive = true
+    }
+
+
+>>>>>>> Stashed changes
 }

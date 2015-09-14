@@ -13,7 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+<<<<<<< Updated upstream:app/src/main/java/org/twitterist/app/DrawerMainActivity.java
 
+=======
+>>>>>>> Stashed changes:app/src/main/java/app/twitterist/org/twitterist/DrawerMainActivity.java
 public class DrawerMainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -105,9 +108,15 @@ public class DrawerMainActivity extends ActionBarActivity
                 break;
             case 5:
             //login
+<<<<<<< Updated upstream:app/src/main/java/org/twitterist/app/DrawerMainActivity.java
                 /*fragmentManager.beginTransaction()
                         .replace(R.id.container, LoginFragment.newInstance("a", "b"))
                         .commit();*/
+=======
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, LoginFragment.newInstance(1))
+                        .commit();
+>>>>>>> Stashed changes:app/src/main/java/app/twitterist/org/twitterist/DrawerMainActivity.java
                 //set Title
                 onSectionAttached(6);
                 break;

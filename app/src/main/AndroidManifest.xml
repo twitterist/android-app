@@ -22,6 +22,20 @@
         </activity>
 
 
+<<<<<<< Updated upstream
+=======
+                <data android:host="t4jsample" />
+                <data
+                    android:host="callback"
+                    android:scheme="x-oauthflow-twitter" />
+                <!-- android:scheme="oauth" -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+>>>>>>> Stashed changes
     </application>
 
 </manifest>
