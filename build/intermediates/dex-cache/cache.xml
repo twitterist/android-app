@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\libs\internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-05e2d05d0a0dd4753212993f5159c8d489e817a9.jar" />
-    </item>
-    <item
-        jar="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\classes-0d64856664cb1932b0407bd9627645019e073a25.jar" />
-    </item>
-    <item
-        jar="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\classes-7c0011344523878ae5953c3d8f88e899822efd1f.jar" />
-    </item>
-    <item
         jar="C:\Users\marco.wuethrich\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-2826aadff689568bd1fed0422854056be4d6c1cf.jar" />
+        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-2826aadff689568bd1fed0422854056be4d6c1cf.jar" />
+    </item>
+    <item
+        jar="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
+        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\classes-bbd0889cdb96c2463cff0e714327b77e9ee6027d.jar" />
+    </item>
+    <item
+        jar="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\classes-beda93ce11631e8c552aa80a4ab00edd14409526.jar" />
+    </item>
+    <item
+        jar="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\libs\internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-47c63f9630cfdae4766110c20dda4ca7e89cbb32.jar" />
     </item>
 
 </items>
