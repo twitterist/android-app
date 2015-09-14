@@ -1,4 +1,4 @@
-package app.twitterist.org.twitterist;
+package org.twitterist.app.twitterist;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;

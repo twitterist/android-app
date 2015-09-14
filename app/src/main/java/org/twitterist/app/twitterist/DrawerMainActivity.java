@@ -1,4 +1,4 @@
-package app.twitterist.org.twitterist;
+package org.twitterist.app.twitterist;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import app.twitterist.org.twitterist.login.LoginFragment;
 
 public class DrawerMainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -106,9 +105,9 @@ public class DrawerMainActivity extends ActionBarActivity
                 break;
             case 5:
             //login
-                fragmentManager.beginTransaction()
+                /*fragmentManager.beginTransaction()
                         .replace(R.id.container, LoginFragment.newInstance("a", "b"))
-                        .commit();
+                        .commit();*/
                 //set Title
                 onSectionAttached(6);
                 break;
