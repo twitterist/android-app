@@ -1,4 +1,4 @@
-package org.twitterist.app.twitterist;
+package org.twitterist.app;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,13 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-<<<<<<< Updated upstream:app/src/main/java/org/twitterist/app/DrawerMainActivity.java
+import org.twitterist.app.login.LoginFragment;
 
-=======
->>>>>>> Stashed changes:app/src/main/java/app/twitterist/org/twitterist/DrawerMainActivity.java
 public class DrawerMainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
-
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -34,7 +31,6 @@ public class DrawerMainActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-
         mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
@@ -108,15 +104,9 @@ public class DrawerMainActivity extends ActionBarActivity
                 break;
             case 5:
             //login
-<<<<<<< Updated upstream:app/src/main/java/org/twitterist/app/DrawerMainActivity.java
-                /*fragmentManager.beginTransaction()
-                        .replace(R.id.container, LoginFragment.newInstance("a", "b"))
-                        .commit();*/
-=======
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, LoginFragment.newInstance(1))
+                        .replace(R.id.container, LoginFragment.newInstance("a", "b"))
                         .commit();
->>>>>>> Stashed changes:app/src/main/java/app/twitterist/org/twitterist/DrawerMainActivity.java
                 //set Title
                 onSectionAttached(6);
                 break;

@@ -2,84 +2,116 @@
 <items version="2" >
 
     <item
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-        jar="C:\Users\marco.wuethrich\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.mopub\mopub-sdk\3.10.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-2826aadff689568bd1fed0422854056be4d6c1cf.jar" />
-=======
-        jar="/Users/marcowuthrich/AndroidStudioProjects/android-sdk-mac_x86/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-e59ed3061f3b54a1be120fd0992f944fc3f6e3df.jar" />
+        sha1="892d68dc2fc31754e08c36168b307b9ea5772697">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-0db5667bba399addd1b9b56a26bdc3770930b85e.jar" />
     </item>
     <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/libs/internal_impl-21.0.0.jar"
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter\1.8.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-7314f867d209dc3000c543d79ecbce5b0419532e.jar" />
->>>>>>> Stashed changes
+        sha1="6fc144eac80d908c45c4308e9aaa55622cae086f">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-fef71e849d2984850406cc704091c2c0943102a6.jar" />
     </item>
     <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/classes.jar"
+        jar="C:\Users\marco.wuethrich\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/pre-dexed/debug/classes-2e033aa9b8293dec1f96f2f78f9369410f556678.jar" />
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-c87fab9a58508a144fa7597f1be301f90a01965b.jar" />
     </item>
     <item
-<<<<<<< Updated upstream
-        jar="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\classes.jar"
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.digits.sdk.android\digits\1.8.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="C:\Program Files\android-studio\GitHub\android-app\app\build\intermediates\pre-dexed\debug\classes-beda93ce11631e8c552aa80a4ab00edd14409526.jar" />
-=======
-        jar="/Users/marcowuthrich/.gradle/caches/modules-2/files-2.1/org.twitter4j/twitter4j-core/4.0.4/1f3c896c7b2f20c51103078ccf0bc2ea97ac012a/twitter4j-core-4.0.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1f3c896c7b2f20c51103078ccf0bc2ea97ac012a">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/pre-dexed/debug/twitter4j-core-4.0.4-eefb63d8dad1cdc9479f9674b7255848777ac0af.jar" />
->>>>>>> Stashed changes
+        sha1="074b93197194a0225023845f90cceba9518be74c">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-c70fd9eba6cbcc25e7c274af289c645648485c46.jar" />
     </item>
     <item
-        jar="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/jars/classes.jar"
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="/Users/marcowuthrich/AndroidStudioProjects/GitHub/android-app/app/build/intermediates/pre-dexed/debug/classes-64ee5ce8d26294c23c7a4540afc718973e37b599.jar" />
-=======
-        jar="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\libs\internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-05e2d05d0a0dd4753212993f5159c8d489e817a9.jar" />
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-732563b403518e48880f936a1dca99bf183d25b1.jar" />
     </item>
     <item
-        jar="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\jars\classes.jar"
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\classes-0d64856664cb1932b0407bd9627645019e073a25.jar" />
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-7ffc277df5eaa18f8dc051e1393303b445e983ad.jar" />
     </item>
     <item
-        jar="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\jars\classes.jar"
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\classes-7c0011344523878ae5953c3d8f88e899822efd1f.jar" />
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-0775f44c70b3231163cb23a349a16c7691cfa81e.jar" />
     </item>
     <item
-        jar="C:\Users\marco.wuethrich\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jar="C:\Users\marco.wuethrich\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\1.8.0\a517f29ed06be2b2879524fcd94b6e9b36e2e0b5\retrofit-1.8.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="C:\Program Files\android-studio\GitHub\Twitterist\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-2826aadff689568bd1fed0422854056be4d6c1cf.jar" />
->>>>>>> parent of ba41ee2... löschen von unnötigem Paket .twitterist
+        sha1="a517f29ed06be2b2879524fcd94b6e9b36e2e0b5">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\retrofit-1.8.0-05517d2237e1d00a8b8653ef6520c13bbddb66a0.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.twitter.sdk.android\twitter-core\1.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c598243d9616e3c6132e054d43f50ff8f8dee63">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-1dc167c874651d067effee377f716273c45ce535.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\io.fabric.sdk.android\fabric\1.3.5\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6e65060ef2ec6ec98365250d2119d7968626fd3f">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-41f612029c98d7569819598aebb0e95b243c0d83.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-ui\1.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b068965b1347f34c1918a6d606358e7b357a1229">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-19d4297748bc77c2eb022b7aa3c7d52407316aa8.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c6d79137693d494dee16372d3921f919eb724ced">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-a6db4ebacb90a8e0f1f00ff8a7b57b7c4f2101ef.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\.gradle\caches\modules-2\files-2.1\com.mopub.volley\mopub-volley\1.1.0\4357bce66ae3bb9be50679e43df122fd0a8f3394\mopub-volley-1.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4357bce66ae3bb9be50679e43df122fd0a8f3394">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\mopub-volley-1.1.0-3ef59cdec3630a1ce8e8d51f0934bf0546798c87.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\gson-2.3-b36e5072cac3d0f3c55449d67ad33a34b40992f5.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-154fd065e1d4121115e49150b4368898449364f7.jar" />
+    </item>
+    <item
+        jar="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\exploded-aar\com.twitter.sdk.android\tweet-composer\0.9.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="de76a31d4a478cd8fcd7e30ec63261c18ba4f5a5">
+        <dex dex="C:\Users\marco.wuethrich\Desktop\android-app\app\build\intermediates\pre-dexed\debug\classes-f3f2e632225a19125f36ae65b64853e85ecb5da7.jar" />
     </item>
 
 </items>
