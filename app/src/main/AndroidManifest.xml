@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.twitterist.app">
+    package="org.twitterist.app" >
 
     <!-- Permission - Internet Connect -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -7,24 +8,48 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme" >
         <activity
-            android:name=".DrawerMainActivity"
-            android:label="@string/title_activity_drawer">
+            android:name=".home.HomeActivity"
+            android:label="@string/title_activity_start" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
         </activity>
-
+        <activity
+            android:name=".drawer.DrawerMain"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".twitter.TwitterActivity"
+            android:label="@string/title_activity_twitter" >
+        </activity>
+        <activity
+            android:name=".history.HistoryActivity"
+            android:label="@string/title_activity_history" >
+        </activity>
+        <activity
+            android:name=".analysis.AnalysisActivity"
+            android:label="@string/title_activity_analysis" >
+        </activity>
+        <activity
+            android:name=".aboutUs.AboutUsActivity"
+            android:label="@string/title_activity_about_us" >
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
 
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="597a3a23dce3878ffbc1cca9f0b92224f054254d" />
+
+
     </application>
 
 </manifest>

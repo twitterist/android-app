@@ -5,13 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_drawer">Twitterist</string>
 
-    <string name="title_section1">Home</string>
-    <string name="title_section2">Twitter Analysis</string>
-    <string name="title_section3">History</string>
-    <string name="title_section4">Twitter</string>
-    <string name="title_section5">Über uns</string>
-    <string name="title_section6">Login</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -19,7 +12,6 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_login">LoginActivity</string>
     <string name="beschreibung_twitter_logo">Twitter Logo Blauer Vogel</string>
     <string name="loginBtnText">Login with Twitter</string>
 
@@ -37,5 +29,26 @@
     <color name="twitter_Logo_Blue">#00aced</color>
     <color name="twitter_Dark_Blue">#0084b4</color>
     <string name="title_activity_web_login">WebLogin</string>
-    
+
+
+    <string name="nav_drawer_image_description">Conil de la Frontera</string>
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Home</item>
+        <item >Twitter Analysis</item>
+        <item >History</item>
+        <item >Twitter</item>
+        <item >Über Uns</item>
+        <item >Login</item>
+
+    </string-array>
+
+    <string name="title_activity_start">Home</string>
+    <string name="title_activity_twitter">Twitter</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_analysis">Analysis</string>
+    <string name="title_activity_about_us">About Us</string>
+    <string name="title_activity_login">Login</string>
+
+
 </resources>
