@@ -8,12 +8,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="org.twitterist.app.login.LoginActivity">
 
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:id="@+id/imageView_user_profile"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="81dp"
+            android:src="@mipmap/ic_default_user_icon"
+            android:background="@drawable/circle_transparent_userimg" />
+
+
     <com.twitter.sdk.android.core.identity.TwitterLoginButton
         android:id="@+id/twitter_login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="79dp" />
+        android:layout_marginBottom="79dp"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profileUserName"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
