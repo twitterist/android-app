@@ -40,7 +40,7 @@ public class HomeActivity extends DrawerMain {
         controller.setCurrentView(mView);
 
         //UI Elements
-        textView = (TextView) findViewById(R.id.homeActivity);
+        textView = (TextView) findViewById(R.id.introText);
         iBTwitter = (ImageButton) findViewById(R.id.imageButton_Twitter_Icon);
         iBAnalysis = (ImageButton) findViewById(R.id.imageButton_Analysis_Icon);
         iBAboutUs = (ImageButton) findViewById(R.id.imageButton_AboutUs_Search_Icon);
