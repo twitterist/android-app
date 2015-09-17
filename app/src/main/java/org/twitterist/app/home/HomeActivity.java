@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import org.twitterist.app.Controller;
 import org.twitterist.app.R;
+import org.twitterist.app.aboutUs.AboutUsActivity;
+import org.twitterist.app.analysis.AnalysisActivity;
 import org.twitterist.app.drawer.DrawerMain;
 import org.twitterist.app.twitter.TwitterActivity;
 
@@ -21,7 +23,7 @@ public class HomeActivity extends DrawerMain {
     Controller controller;
 
     TextView textView;
-    ImageButton iBTwitter;
+    ImageButton iBTwitter, iBAnalysis, iBAboutUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public class HomeActivity extends DrawerMain {
 
 
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View mView = inflater.inflate(R.layout.activity_start, null ,false);
+        View mView = inflater.inflate(R.layout.activity_start, null, false);
         mDrawerLayout.addView(mView, 0);
 
         //set View on Controller
@@ -39,7 +41,9 @@ public class HomeActivity extends DrawerMain {
 
         //UI Elements
         textView = (TextView) findViewById(R.id.homeActivity);
-        iBTwitter =(ImageButton) findViewById(R.id.imageButton_Twitter_Icon);
+        iBTwitter = (ImageButton) findViewById(R.id.imageButton_Twitter_Icon);
+        iBAnalysis = (ImageButton) findViewById(R.id.imageButton_Analysis_Icon);
+        iBAboutUs = (ImageButton) findViewById(R.id.imageButton_AboutUs_Search_Icon);
 
 
 
@@ -50,6 +54,20 @@ public class HomeActivity extends DrawerMain {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), TwitterActivity.class);
+                startActivity(intent);
+            }
+        });
+        iBAnalysis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AnalysisActivity.class);
+                startActivity(intent);
+            }
+        });
+        iBAboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AboutUsActivity.class);
                 startActivity(intent);
             }
         });

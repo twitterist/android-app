@@ -13,19 +13,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome by Twitterist"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="96dp"
         android:id="@+id/homeActivity"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+    <!-- Twetter Button-->
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton_Twitter_Icon"
         android:src="@mipmap/ic_twitter_icon_blue"
         android:background="#ffffff"
-        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:layout_alignTop="@+id/imageButton_Analysis_Icon"
         android:layout_toLeftOf="@+id/homeActivity"
         android:layout_toStartOf="@+id/homeActivity" />
+
+    <!-- Analysis Button-->
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_Analysis_Icon"
+        android:src="@mipmap/ic_serach_icon"
+        android:background="#ffffff"
+        android:layout_marginBottom="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <!-- AboutUs Search Button-->
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton_AboutUs_Search_Icon"
+        android:src="@mipmap/ic_search_icon"
+        android:background="#ffffff"
+        android:layout_alignTop="@+id/imageButton_Analysis_Icon"
+        android:layout_toRightOf="@+id/homeActivity"
+        android:layout_toEndOf="@+id/homeActivity" />
 
 </RelativeLayout>
