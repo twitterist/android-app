@@ -1,18 +1,19 @@
 package org.twitterist.app.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.twitterist.app.Controller;
 import org.twitterist.app.R;
 import org.twitterist.app.drawer.DrawerMain;
-
-
+import org.twitterist.app.twitter.TwitterActivity;
 
 
 public class HomeActivity extends DrawerMain {
@@ -20,6 +21,7 @@ public class HomeActivity extends DrawerMain {
     Controller controller;
 
     TextView textView;
+    ImageButton iBTwitter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +30,31 @@ public class HomeActivity extends DrawerMain {
         controller = new Controller();
 
 
-        textView = (TextView) findViewById(R.id.homeActivity);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         View mView = inflater.inflate(R.layout.activity_start, null ,false);
         mDrawerLayout.addView(mView, 0);
 
-
-
         //set View on Controller
         controller.setCurrentView(mView);
+
+        //UI Elements
+        textView = (TextView) findViewById(R.id.homeActivity);
+        iBTwitter =(ImageButton) findViewById(R.id.imageButton_Twitter_Icon);
+
+
+
+
+        //Listeners
+        iBTwitter.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TwitterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
