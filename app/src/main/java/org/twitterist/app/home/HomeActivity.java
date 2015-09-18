@@ -2,14 +2,19 @@ package org.twitterist.app.home;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 import org.twitterist.app.Controller;
 import org.twitterist.app.R;
 import org.twitterist.app.aboutUs.AboutUsActivity;
@@ -17,17 +22,28 @@ import org.twitterist.app.analysis.AnalysisActivity;
 import org.twitterist.app.drawer.DrawerMain;
 import org.twitterist.app.twitter.TwitterActivity;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 
 public class HomeActivity extends DrawerMain {
 
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "LsCQaPOwd8k7WkyRFRZF4Q";
+    private static final String TWITTER_SECRET = "KJbJu5IQrlwxW7Cwnax3mMzAc4j3n6Wd2dG125srgk";
+
+
     Controller controller;
 
-    TextView textView;
+    WebView intoTextWeb;
     ImageButton iBTwitter, iBAnalysis, iBAboutUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
 
         controller = new Controller();
 
@@ -40,12 +56,15 @@ public class HomeActivity extends DrawerMain {
         controller.setCurrentView(mView);
 
         //UI Elements
-        textView = (TextView) findViewById(R.id.introText);
+        intoTextWeb = (WebView) findViewById(R.id.introText);
         iBTwitter = (ImageButton) findViewById(R.id.imageButton_Twitter_Icon);
         iBAnalysis = (ImageButton) findViewById(R.id.imageButton_Analysis_Icon);
         iBAboutUs = (ImageButton) findViewById(R.id.imageButton_AboutUs_Search_Icon);
 
 
+
+        intoTextWeb.getSettings().setJavaScriptEnabled(true);
+        intoTextWeb.loadData(readTextFromResource(R.raw.index_start_page), "text/html", "utf8");
 
 
         //Listeners
@@ -74,6 +93,29 @@ public class HomeActivity extends DrawerMain {
 
 
     }
+
+    private String readTextFromResource(int resourceID)
+    {
+        InputStream raw = getResources().openRawResource(resourceID);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        int i;
+        try
+        {
+            i = raw.read();
+            while (i != -1)
+            {
+                stream.write(i);
+                i = raw.read();
+            }
+            raw.close();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return stream.toString();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

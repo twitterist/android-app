@@ -24,22 +24,22 @@
             <include
                 android:id="@+id/toolbar"
                 layout="@layout/toolbar"/>
-
+    <!--
             <FrameLayout
                 android:id="@+id/frame_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
+-->
 
         </LinearLayout>
 
 
-        <!-- Nav drawer -->
+        <!-- Nav drawer @dimen/abc_action_bar_default_height_material-->
         <LinearLayout
             android:id="@+id/location_drawer_image_banner"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/nav_drawer_max_width"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/abc_action_bar_default_height_material"
+            android:layout_marginTop="35dp"
             android:orientation="vertical"
             android:layout_gravity="start"
             android:gravity="center_vertical">
@@ -56,9 +56,10 @@
                 android:layout_width="match_parent"
                 android:maxWidth="@dimen/nav_drawer_max_width"
                 android:layout_height="match_parent"
+                android:paddingTop="8dp"
                 android:choiceMode="singleChoice"
                 android:divider="@android:color/transparent"
-                android:dividerHeight="10dp"
+                android:dividerHeight="20dp"
                 android:background="@color/white"/>
         </LinearLayout>
     </android.support.v4.widget.DrawerLayout>
