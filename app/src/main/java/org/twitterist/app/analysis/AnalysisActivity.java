@@ -57,4 +57,5 @@ public class AnalysisActivity extends DrawerMain {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

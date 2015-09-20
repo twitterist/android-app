@@ -36,8 +36,8 @@
     <string-array name="nav_drawer_items">
         <item >Home</item>
         <item >Twitter Analysis</item>
-        <item >History</item>
         <item >Twitter</item>
+        <item >History</item>
         <item >Über Uns</item>
         <item >Login</item>
 
