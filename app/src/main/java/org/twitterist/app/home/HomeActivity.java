@@ -67,7 +67,6 @@ public class HomeActivity extends DrawerMain {
         iBAboutUs = (ImageButton) findViewById(R.id.imageButton_AboutUs_Search_Icon);
 
 
-
         intoTextWeb.getSettings().setJavaScriptEnabled(true);
         intoTextWeb.setBackgroundColor(Color.TRANSPARENT);
         intoTextWeb.loadData(readTextFromResource(R.raw.index_start_page), "text/html", "utf8");
@@ -78,13 +77,13 @@ public class HomeActivity extends DrawerMain {
 
             @Override
             public void onClick(View v) {
-                if (Profile.getUser() != null){
+                if (Profile.getUser() != null) {
                     intent = new Intent(getApplicationContext(), TwitterActivity.class);
                     startActivity(intent);
-                }else {
+                } else {
                     intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
-                    Toast.makeText(getApplicationContext(),"You must be Login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "You must be Login", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -92,13 +91,13 @@ public class HomeActivity extends DrawerMain {
         iBAnalysis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Profile.getUser() != null){
+                if (Profile.getUser() != null) {
                     intent = new Intent(getApplicationContext(), AnalysisActivity.class);
                     startActivity(intent);
-                }else {
+                } else {
                     intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
-                    Toast.makeText(getApplicationContext(),"You must be Login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "You must be Login", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -113,48 +112,21 @@ public class HomeActivity extends DrawerMain {
 
     }
 
-    private String readTextFromResource(int resourceID)
-    {
+    private String readTextFromResource(int resourceID) {
         InputStream raw = getResources().openRawResource(resourceID);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         int i;
-        try
-        {
+        try {
             i = raw.read();
-            while (i != -1)
-            {
+            while (i != -1) {
                 stream.write(i);
                 i = raw.read();
             }
             raw.close();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return stream.toString();
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_start, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
+

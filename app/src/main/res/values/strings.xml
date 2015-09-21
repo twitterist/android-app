@@ -43,7 +43,7 @@
 
     </string-array>
 
-    <string name="title_activity_start">Home</string>
+    <string name="title_activity_home">Home</string>
     <string name="title_activity_twitter">Twitter</string>
     <string name="title_activity_history">History</string>
     <string name="title_activity_analysis">Analysis</string>
