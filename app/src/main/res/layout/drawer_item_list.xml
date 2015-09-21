@@ -7,11 +7,10 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="25dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
-        android:contentDescription="@string/nav_drawer_image_description"
         android:src="@drawable/ic_launcher"/>
 
     <TextView

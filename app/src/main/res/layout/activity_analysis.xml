@@ -6,15 +6,61 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.twitterist.app.analysis.AnalysisActivity">
+    tools:context="org.twitterist.app.analysis.AnalysisActivity"
+    android:background="#8562d8ff">
 
     <TextView
-        android:id="@+id/analysis_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Twitter Analysis Activity"
+        android:id="@+id/textView_info"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:text="Hier kannst du deinen Tweet analysieren, Wie erfolgreich ist dein Tweet "
+        android:layout_marginTop="55dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="137dp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText_tweet_analysis"
+        android:hint="Schreibe hier deinen Tweet"
+        android:gravity="center"
+        android:layout_below="@+id/textView_info"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:background="@drawable/view_rounded" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Analysieren"
+        android:id="@+id/button_analysis"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/editText_tweet_analysis"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twittern"
+        android:id="@+id/button_twittern_analysis"
+        android:layout_marginBottom="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/editText_tweet_analysis"
+        android:layout_alignStart="@+id/editText_tweet_analysis"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:id="@+id/button_history_analysis"
+        android:layout_alignTop="@+id/button_twittern_analysis"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp" />
 
 </RelativeLayout>

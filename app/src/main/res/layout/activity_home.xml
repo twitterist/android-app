@@ -47,7 +47,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/subTitle"
         android:layout_above="@+id/imageButton_Twitter_Icon"
-        android:background="#8586ddff" />
+        android:background="@drawable/view_rounded" />
 
 
     <!-- Twitter Button-->
