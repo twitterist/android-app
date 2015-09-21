@@ -41,7 +41,7 @@ public class DrawerMain extends ActionBarActivity {
         TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY),getString(R.string.TWITTER_CONSUMER_SECRET));
         Fabric.with(this, new Twitter(authConfig));
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_drawer);
 
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

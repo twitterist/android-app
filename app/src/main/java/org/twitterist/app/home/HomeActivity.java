@@ -54,7 +54,7 @@ public class HomeActivity extends DrawerMain {
 
 
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View mView = inflater.inflate(R.layout.activity_start, null, false);
+        View mView = inflater.inflate(R.layout.activity_home, null, false);
         mDrawerLayout.addView(mView, 0);
 
         //set View on Controller

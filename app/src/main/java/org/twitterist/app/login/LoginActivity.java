@@ -190,7 +190,7 @@ public class LoginActivity extends DrawerMain {
                     .into(twitterImageProfile);
 
             //Set UserName
-            txtViewProfileName.setText("Willkommen " + Profile.getUser().name);
+            txtViewProfileName.setText(Profile.getUser().name);
         }
         loginButton.setVisibility(View.GONE);
 
