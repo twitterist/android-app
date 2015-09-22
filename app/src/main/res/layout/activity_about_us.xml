@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.twitterist.app.aboutUs.AboutUsActivity">
+    tools:context="org.twitterist.app.activity.AboutUsActivity">
 
     <TextView
         android:id="@+id/aboutUs_activity"

@@ -4,7 +4,7 @@ import android.test.InstrumentationTestCase;
 
 import com.twitter.sdk.android.core.models.User;
 
-import org.twitterist.app.login.Profile;
+import org.twitterist.app.model.Profile;
 
 /**
  * Created by marco.wuethrich on 22.09.2015.

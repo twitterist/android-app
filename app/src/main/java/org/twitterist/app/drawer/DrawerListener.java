@@ -5,8 +5,6 @@ package org.twitterist.app.drawer;
  */
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
@@ -14,79 +12,73 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import org.twitterist.app.Controller;
-import org.twitterist.app.IntentController;
-import org.twitterist.app.login.Profile;
-
-import java.lang.ref.WeakReference;
+import org.twitterist.app.controller.Controller;
+import org.twitterist.app.controller.IntentController;
+import org.twitterist.app.model.Profile;
 
 
 public class DrawerListener implements ListView.OnItemClickListener {
 
-    Controller controller;
     IntentController intentController;
 
-    WeakReference<DrawerLayout> mDrawerLayout;
-    FragmentManager fm;
-    private Context ctx;
+    private Context context;
+    Controller controller;
+    DrawerLayout drawerLayout;
 
-    public DrawerListener(Context ctx, WeakReference<DrawerLayout> mDrawerLayout, FragmentManager fm) {
-        this.mDrawerLayout = mDrawerLayout;
-        this.fm = fm;
+    public DrawerListener(DrawerLayout drawerLayout) {
+        this.drawerLayout = drawerLayout;
+        controller = new Controller();
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        displayView(position);
 
-        if (Controller.getDrawerLayout().isDrawerOpen(Gravity.START | Gravity.LEFT)){
-            Controller.getDrawerLayout().closeDrawers();
+        //start new Intent
+        startNewIntent(position);
+        //Drawer close
+        if (drawerLayout.isDrawerOpen(Gravity.START | Gravity.LEFT)) {
+            drawerLayout.closeDrawers();
         }
-
-
     }
 
-    private void displayView(int position) {
-        controller = new Controller();
+    private void startNewIntent(int position) {
         intentController = new IntentController();
-        this.ctx = controller.getCurrentView().getContext();
-        Intent intent = null;
+        context = controller.getCurrentView().getContext();
+
         switch (position) {
             case 0:
                 //Home
-                ctx.startActivity(intentController.getHomeIntent());
+                context.startActivity(intentController.getHomeIntent(context));
                 break;
             case 1:
                 //Twitter Analysis
                 if (Profile.getUser() != null) {
-                    ctx.startActivity(intentController.getAnalysisInten());
+                    context.startActivity(intentController.getAnalysisInten(context));
                 } else {
-                    mustBeLogin(ctx);
+                    mustBeLogin(context);
                 }
-
-
                 break;
             case 2:
                 //Twitter
                 if (Profile.getUser() != null) {
-                    ctx.startActivity(intentController.getTwitterIntent());
+                    context.startActivity(intentController.getTwitterIntent(context));
                 } else {
-                    mustBeLogin(ctx);
+                    mustBeLogin(context);
                 }
 
                 break;
             case 3:
                 //History
-                ctx.startActivity(intentController.getHistoryIntent());
-            break;
+                context.startActivity(intentController.getHistoryIntent(context));
+                break;
             case 4:
                 //Login
-                ctx.startActivity(intentController.getAboutUsIntent());
+                context.startActivity(intentController.getAboutUsIntent(context));
                 break;
             case 5:
                 //Login
-                ctx.startActivity(intentController.getLoginInten());
+                context.startActivity(intentController.getLoginInten(context));
                 break;
             default:
                 break;
@@ -95,8 +87,8 @@ public class DrawerListener implements ListView.OnItemClickListener {
     }
 
 
-    public void mustBeLogin( Context context) {
-        ctx.startActivity(intentController.getLoginInten());
+    public void mustBeLogin(Context context) {
+        this.context.startActivity(intentController.getLoginInten(context));
         Toast.makeText(context, "You must be Login", Toast.LENGTH_SHORT).show();
     }
 }

@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="50dp"
-    tools:context="org.twitterist.app.login.LoginActivity">
+    tools:context="org.twitterist.app.activity.LoginActivity">
 
 
     <RelativeLayout
@@ -46,7 +46,7 @@
             android:layout_centerHorizontal="true">
 
             <ImageButton
-                android:id="@+id/imageButton_twitter_login_Zone"
+                android:id="@+id/imageButton_Twitter_Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
@@ -58,9 +58,9 @@
                 android:id="@+id/textViewTwitter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageButton_twitter_login_Zone"
+                android:layout_alignLeft="@+id/imageButton_Twitter_Login"
                 android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/imageButton_twitter_login_Zone"
+                android:layout_alignStart="@+id/imageButton_Twitter_Login"
                 android:text="Twitter"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />
@@ -78,7 +78,7 @@
                 android:layout_marginBottom="10dp">
 
                 <ImageButton
-                    android:id="@+id/imageButton_Analysis_Icon_Login_Zone"
+                    android:id="@+id/imageButton_Analysis_Login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#00000000"
@@ -89,7 +89,7 @@
                     android:id="@+id/textViewAnalysis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/imageButton_Analysis_Icon_Login_Zone"
+                    android:layout_below="@+id/imageButton_Analysis_Login"
                     android:text="Analysis"
                     android:layout_centerHorizontal="true"/>
 
@@ -107,7 +107,7 @@
             android:layout_marginRight="30dp">
 
             <ImageButton
-                android:id="@+id/imageButton_AboutUS_Icon_Login_Zone"
+                android:id="@+id/imageButton_AboutUS_Login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
@@ -118,7 +118,7 @@
                 android:id="@+id/textViewAboutUs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imageButton_AboutUS_Icon_Login_Zone"
+                android:layout_below="@+id/imageButton_AboutUS_Login"
                 android:layout_centerHorizontal="true"
                 android:text="About Us"/>
 

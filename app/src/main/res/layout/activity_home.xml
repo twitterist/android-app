@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="45dp"
-    tools:context="org.twitterist.app.home.HomeActivity">
+    tools:context="org.twitterist.app.activity.HomeActivity">
 
 
     <TextView
@@ -46,18 +46,18 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/subTitle"
-        android:layout_above="@+id/imageButton_Twitter_Icon"
+        android:layout_above="@+id/imageButton_Twitter_Home"
         android:background="@drawable/view_rounded" />
 
 
     <!-- Twitter Button-->
     <ImageButton
-        android:id="@+id/imageButton_Twitter_Icon"
+        android:id="@+id/imageButton_Twitter_Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:src="@mipmap/ic_twitter_icon_blue"
-        android:layout_alignBottom="@+id/imageButton_AboutUs_Search_Icon"
+        android:layout_alignBottom="@+id/imageButton_AboutUs_Home"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="51dp"
@@ -65,7 +65,7 @@
         android:paddingTop="8dp" />
     <!-- Analysis Button-->
     <ImageButton
-        android:id="@+id/imageButton_Analysis_Icon"
+        android:id="@+id/imageButton_Analysis_Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00000000"
@@ -76,12 +76,12 @@
          />
 
     <ImageButton
-        android:id="@+id/imageButton_AboutUs_Search_Icon"
+        android:id="@+id/imageButton_AboutUs_Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:src="@mipmap/ic_search_icon"
-        android:layout_alignBottom="@+id/imageButton_Analysis_Icon"
+        android:layout_alignBottom="@+id/imageButton_Analysis_Home"
         android:layout_alignRight="@+id/introText"
         android:layout_alignEnd="@+id/introText"
         android:layout_marginRight="51dp"

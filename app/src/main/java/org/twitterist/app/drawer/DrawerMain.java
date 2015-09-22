@@ -12,8 +12,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
@@ -21,11 +19,8 @@ import android.widget.ListView;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
-import org.twitterist.app.Controller;
-import org.twitterist.app.IntentController;
 import org.twitterist.app.R;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 import io.fabric.sdk.android.Fabric;
@@ -37,7 +32,6 @@ public class DrawerMain extends ActionBarActivity {
     protected DrawerLayout mDrawerLayout;
     public ActionBarDrawerToggle mDrawerToggle;
     public ListView mDrawerList;
-    Controller controller;
 
 
     @Override
@@ -53,13 +47,12 @@ public class DrawerMain extends ActionBarActivity {
 
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View mView = inflater.inflate(R.layout.activity_drawer, null ,false);
-        Controller.setDrawerView(Controller.getDrawerView());
+
         setContentView(R.layout.activity_drawer);
 
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-        Controller.setDrawerLayout(mDrawerLayout);
 
         setSupportActionBar(mToolbar);
         mDrawerToggle= new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
@@ -74,12 +67,8 @@ public class DrawerMain extends ActionBarActivity {
 
         DrawerListAdapter adapter = new DrawerListAdapter(getApplicationContext(),navDrawerItems);
         mDrawerList.setAdapter(adapter);
+        mDrawerList.setOnItemClickListener(new DrawerListener(mDrawerLayout));
 
-        mDrawerList.setOnItemClickListener(new DrawerListener(getApplicationContext(),
-                new WeakReference<DrawerLayout>(mDrawerLayout),
-                getSupportFragmentManager()));
-
-        Controller.setDrawerLayout(mDrawerLayout);
     }
 
     @Override

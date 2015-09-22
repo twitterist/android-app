@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.twitterist.app.twitter.TwitterActivity"
+    tools:context="org.twitterist.app.activity.TwitterActivity"
     android:background="#8562d8ff">
 
 
