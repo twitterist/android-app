@@ -8,6 +8,6 @@
     <dimen name="navigation_drawer_width">100dp</dimen>
 -->
     <dimen name="nav_drawer_max_width">240dp</dimen>
-    <dimen name="nav_drawer_font_size_option">20sp</dimen>
+    <dimen name="nav_drawer_font_size_option">18sp</dimen>
 
 </resources>
