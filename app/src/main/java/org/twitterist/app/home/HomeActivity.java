@@ -16,6 +16,7 @@ import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import org.twitterist.app.Controller;
+import org.twitterist.app.IntentController;
 import org.twitterist.app.R;
 import org.twitterist.app.aboutUs.AboutUsActivity;
 import org.twitterist.app.analysis.AnalysisActivity;
@@ -57,6 +58,9 @@ public class HomeActivity extends DrawerMain {
 
         //set View on Controller
         controller.setCurrentView(mView);
+        Controller.setActivity(this);
+
+        new IntentController().initIntent();
 
         //UI Elements
         intoTextWeb = (WebView) findViewById(R.id.introText);

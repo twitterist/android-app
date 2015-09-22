@@ -22,6 +22,7 @@ import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import org.twitterist.app.Controller;
+import org.twitterist.app.IntentController;
 import org.twitterist.app.R;
 
 import java.lang.ref.WeakReference;
@@ -46,6 +47,9 @@ public class DrawerMain extends ActionBarActivity {
         //Twitter init
         TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY),getString(R.string.TWITTER_CONSUMER_SECRET));
         Fabric.with(this, new Twitter(authConfig));
+
+
+
 
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View mView = inflater.inflate(R.layout.activity_drawer, null ,false);

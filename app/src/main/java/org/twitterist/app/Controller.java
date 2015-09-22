@@ -1,5 +1,6 @@
 package org.twitterist.app;
 
+import android.app.Activity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 
@@ -11,6 +12,7 @@ public class Controller {
     private static View currentView;
     private static DrawerLayout drawerLayout;
     private static View drawerView;
+    private static Activity mActivity;
 
     public Controller() {
     }
@@ -38,5 +40,13 @@ public class Controller {
 
     public static void setDrawerView(View drawerView) {
         Controller.drawerView = drawerView;
+    }
+
+    public static Activity getActivity() {
+        return mActivity;
+    }
+
+    public static void setActivity(Activity mActivity) {
+        mActivity = mActivity;
     }
 }

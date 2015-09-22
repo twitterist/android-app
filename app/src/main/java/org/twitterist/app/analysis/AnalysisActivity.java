@@ -45,6 +45,7 @@ public class AnalysisActivity extends DrawerMain {
 
         //set View on Controller
         controller.setCurrentView(mView);
+        Controller.setActivity(this);
 
         btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -33,6 +33,7 @@ public class AboutUsActivity extends DrawerMain {
 
         //set View on Controller
         controller.setCurrentView(mView);
+        Controller.setActivity(this);
 
     }
 
