@@ -189,7 +189,8 @@ public class LoginActivity extends DrawerMain {
         Profile.setSession(null);
     }
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

@@ -4,20 +4,24 @@ package org.twitterist.app.drawer;
  * Created by marcowuthrich on 15.09.15.
  */
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
+import org.twitterist.app.Controller;
 import org.twitterist.app.R;
 
 import java.lang.ref.WeakReference;
@@ -32,6 +36,8 @@ public class DrawerMain extends ActionBarActivity {
     protected DrawerLayout mDrawerLayout;
     public ActionBarDrawerToggle mDrawerToggle;
     public ListView mDrawerList;
+    Controller controller;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +47,19 @@ public class DrawerMain extends ActionBarActivity {
         TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY),getString(R.string.TWITTER_CONSUMER_SECRET));
         Fabric.with(this, new Twitter(authConfig));
 
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View mView = inflater.inflate(R.layout.activity_drawer, null ,false);
+        Controller.setDrawerView(Controller.getDrawerView());
         setContentView(R.layout.activity_drawer);
 
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        Controller.setDrawerLayout(mDrawerLayout);
 
         setSupportActionBar(mToolbar);
         mDrawerToggle= new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
         String[] nameoptionList = getResources().getStringArray(R.array.nav_drawer_items);
 
         // If you want to apply different icon for items, use the other constructor for DrawerItem.
@@ -65,6 +74,8 @@ public class DrawerMain extends ActionBarActivity {
         mDrawerList.setOnItemClickListener(new DrawerListener(getApplicationContext(),
                 new WeakReference<DrawerLayout>(mDrawerLayout),
                 getSupportFragmentManager()));
+
+        Controller.setDrawerLayout(mDrawerLayout);
     }
 
     @Override
@@ -95,4 +106,5 @@ public class DrawerMain extends ActionBarActivity {
         }
         super.onBackPressed();
     }
+
 }

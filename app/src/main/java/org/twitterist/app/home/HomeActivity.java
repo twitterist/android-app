@@ -33,11 +33,6 @@ import io.fabric.sdk.android.Fabric;
 
 public class HomeActivity extends DrawerMain {
 
-    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "LsCQaPOwd8k7WkyRFRZF4Q";
-    private static final String TWITTER_SECRET = "KJbJu5IQrlwxW7Cwnax3mMzAc4j3n6Wd2dG125srgk";
-
-
     Controller controller;
 
     WebView intoTextWeb;
@@ -47,10 +42,13 @@ public class HomeActivity extends DrawerMain {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        controller = new Controller();
+
+        //Twitter AuthConfig Init
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY), getString(R.string.TWITTER_CONSUMER_SECRET));
         Fabric.with(this, new Twitter(authConfig));
 
-        controller = new Controller();
+
 
 
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -113,20 +111,21 @@ public class HomeActivity extends DrawerMain {
     }
 
     private String readTextFromResource(int resourceID) {
-        InputStream raw = getResources().openRawResource(resourceID);
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        InputStream inputStream = getResources().openRawResource(resourceID);
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
         int i;
         try {
-            i = raw.read();
+            i = inputStream.read();
             while (i != -1) {
-                stream.write(i);
-                i = raw.read();
+                outStream.write(i);
+                i = inputStream.read();
             }
-            raw.close();
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return stream.toString();
+        return outStream.toString();
     }
+
 }
 

@@ -1,4 +1,4 @@
-package org.twitterist.app.twitterist;
+package org.twitterist.app;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

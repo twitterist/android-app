@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -25,16 +26,17 @@ import org.twitterist.app.twitter.TwitterActivity;
 import java.lang.ref.WeakReference;
 
 
-public class DrawerListener implements  ListView.OnItemClickListener{
+public class DrawerListener implements ListView.OnItemClickListener {
 
     Controller controller;
 
     WeakReference<DrawerLayout> mDrawerLayout;
     FragmentManager fm;
     private Context ctx;
+    View currentView;
 
-    public DrawerListener(Context ctx, WeakReference<DrawerLayout> mDrawerLayout, FragmentManager fm)
-    {
+    public DrawerListener(Context ctx, WeakReference<DrawerLayout> mDrawerLayout, FragmentManager fm) {
+
         this.mDrawerLayout = mDrawerLayout;
         this.fm = fm;
         this.ctx = ctx;
@@ -42,13 +44,19 @@ public class DrawerListener implements  ListView.OnItemClickListener{
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        //Close Navigation start new Activity
+        do {
+            Controller.getDrawerLayout().closeDrawers();
+        }while (!Controller.getDrawerLayout().isDrawerOpen(Gravity.START | Gravity.LEFT));
         displayView(position);
+
     }
 
     private void displayView(int position) {
-
         controller = new Controller();
-        View currentView = controller.getCurrentView();
+        currentView = controller.getCurrentView();
+
         Intent intent = null;
         switch (position) {
             case 0:
@@ -58,20 +66,22 @@ public class DrawerListener implements  ListView.OnItemClickListener{
                 break;
             case 1:
                 //Twitter Analysis
-                if (Profile.getUser() != null){
+                if (Profile.getUser() != null) {
+
                     intent = new Intent(currentView.getContext(), AnalysisActivity.class);
                     currentView.getContext().startActivity(intent);
-                }else {
+
+                } else {
                     mustBeLogin(intent, currentView);
                 }
 
                 break;
             case 2:
                 //Twitter
-                if (Profile.getUser() != null){
+                if (Profile.getUser() != null) {
                     intent = new Intent(currentView.getContext(), TwitterActivity.class);
                     currentView.getContext().startActivity(intent);
-                }else {
+                } else {
                     mustBeLogin(intent, currentView);
                 }
 
@@ -94,11 +104,13 @@ public class DrawerListener implements  ListView.OnItemClickListener{
             default:
                 break;
         }
+
     }
 
-    public void mustBeLogin(Intent intent, View currentView){
+
+    public void mustBeLogin(Intent intent, View currentView) {
         intent = new Intent(currentView.getContext(), LoginActivity.class);
         currentView.getContext().startActivity(intent);
-        Toast.makeText(currentView.getContext(),"You must be Login", Toast.LENGTH_SHORT).show();
+        Toast.makeText(currentView.getContext(), "You must be Login", Toast.LENGTH_SHORT).show();
     }
 }
