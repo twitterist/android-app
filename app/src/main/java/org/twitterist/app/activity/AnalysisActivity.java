@@ -13,6 +13,7 @@ import org.twitterist.app.controller.AnalysisController;
 import org.twitterist.app.controller.Controller;
 import org.twitterist.app.drawer.DrawerMain;
 import org.twitterist.app.listener.ButtonListener;
+import org.twitterist.app.listener.KeyboardListener;
 
 public class AnalysisActivity extends DrawerMain {
 
@@ -45,27 +46,27 @@ public class AnalysisActivity extends DrawerMain {
 
         //set View on Controller
         controller.setCurrentView(mView);
-      //  Controller.setActivity(this);
 
-
+        //Listener
+        editTextTweet.setOnFocusChangeListener(new KeyboardListener());
         btnTwittern.setOnClickListener(new ButtonListener());
         btnHistory.setOnClickListener(new ButtonListener());
-        btnAnalysis.setOnClickListener( new ButtonListener());
+        btnAnalysis.setOnClickListener(new ButtonListener());
     }
 
-    public boolean sendTweetToAnalysis(){
+    public boolean sendTweetToAnalysis() {
         String tweetText = editTextTweet.getText().toString();
 
-        if (tweetText.length() >0 && tweetText.length() < MAX_TWEEET_LENGHT){
+        if (tweetText.length() > 0 && tweetText.length() < MAX_TWEEET_LENGHT) {
             new AnalysisController().sendRequest(tweetText);
             return true;
-        }else {
+        } else {
             return false;
         }
 
     }
 
-    public String getEditText(){
+    public String getEditText() {
         return editTextTweet.getText().toString();
     }
 

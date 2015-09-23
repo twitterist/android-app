@@ -16,6 +16,7 @@ import org.twitterist.app.R;
 import org.twitterist.app.controller.Controller;
 import org.twitterist.app.controller.TwitterController;
 import org.twitterist.app.drawer.DrawerMain;
+import org.twitterist.app.listener.KeyboardListener;
 import org.twitterist.app.model.Profile;
 
 
@@ -56,6 +57,7 @@ public class TwitterActivity extends DrawerMain {
         initTimeline();
 
 
+        editTextTweetString.setOnFocusChangeListener(new KeyboardListener());
         btnTweetSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

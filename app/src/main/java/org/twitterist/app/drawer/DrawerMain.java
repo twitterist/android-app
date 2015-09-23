@@ -39,14 +39,12 @@ public class DrawerMain extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         //Twitter init
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY),getString(R.string.TWITTER_CONSUMER_SECRET));
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY), getString(R.string.TWITTER_CONSUMER_SECRET));
         Fabric.with(this, new Twitter(authConfig));
 
 
-
-
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View mView = inflater.inflate(R.layout.activity_drawer, null ,false);
+        final View mView = inflater.inflate(R.layout.activity_drawer, null, false);
 
         setContentView(R.layout.activity_drawer);
 
@@ -55,20 +53,21 @@ public class DrawerMain extends ActionBarActivity {
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
         setSupportActionBar(mToolbar);
-        mDrawerToggle= new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         String[] nameoptionList = getResources().getStringArray(R.array.nav_drawer_items);
 
         // If you want to apply different icon for items, use the other constructor for DrawerItem.
         ArrayList<DrawerItem> navDrawerItems = new ArrayList<DrawerItem>();
-        for (int i = 0 ; i < nameoptionList.length ; i++){
-            navDrawerItems.add(new DrawerItem(nameoptionList[i]));
+        for (String aNameoptionList : nameoptionList) {
+            navDrawerItems.add(new DrawerItem(aNameoptionList));
         }
 
-        DrawerListAdapter adapter = new DrawerListAdapter(getApplicationContext(),navDrawerItems);
+        DrawerListAdapter adapter = new DrawerListAdapter(getApplicationContext(), navDrawerItems);
         mDrawerList.setAdapter(adapter);
-        mDrawerList.setOnItemClickListener(new DrawerListener(mDrawerLayout));
 
+        //Listener
+        mDrawerList.setOnItemClickListener(new DrawerListener(mDrawerLayout));
     }
 
     @Override
