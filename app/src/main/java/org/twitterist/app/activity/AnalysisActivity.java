@@ -1,7 +1,6 @@
 package org.twitterist.app.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,17 +8,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.twitterist.app.controller.Controller;
 import org.twitterist.app.R;
+import org.twitterist.app.controller.AnalysisController;
+import org.twitterist.app.controller.Controller;
 import org.twitterist.app.drawer.DrawerMain;
-import org.twitterist.app.activity.HistoryActivity;
+import org.twitterist.app.listener.ButtonListener;
 
 public class AnalysisActivity extends DrawerMain {
 
     Controller controller;
     TextView textViewInfo;
-    EditText editTextTweet;
+    static EditText editTextTweet;
     Button btnAnalysis, btnTwittern, btnHistory;
+
+    public final int MAX_TWEEET_LENGHT = 240;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +35,9 @@ public class AnalysisActivity extends DrawerMain {
 
         textViewInfo = (TextView) mView.findViewById(R.id.textView_info);
         editTextTweet = (EditText) mView.findViewById(R.id.editText_tweet_analysis);
-        btnAnalysis = (Button) mView.findViewById(R.id.button_analysis);
-        btnHistory = (Button) mView.findViewById(R.id.button_history_analysis);
-        btnTwittern = (Button) mView.findViewById(R.id.button_twittern_analysis);
+        btnAnalysis = (Button) mView.findViewById(R.id.btn_send_analysis_analysis);
+        btnHistory = (Button) mView.findViewById(R.id.btn_history_analysis);
+        btnTwittern = (Button) mView.findViewById(R.id.btn_twittern_analysis);
 
 
         mDrawerLayout.addView(mView, 0);
@@ -45,15 +47,26 @@ public class AnalysisActivity extends DrawerMain {
         controller.setCurrentView(mView);
       //  Controller.setActivity(this);
 
-        btnHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HistoryActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
+        btnTwittern.setOnClickListener(new ButtonListener());
+        btnHistory.setOnClickListener(new ButtonListener());
+        btnAnalysis.setOnClickListener( new ButtonListener());
     }
 
+    public boolean sendTweetToAnalysis(){
+        String tweetText = editTextTweet.getText().toString();
+
+        if (tweetText.length() >0 && tweetText.length() < MAX_TWEEET_LENGHT){
+            new AnalysisController().sendRequest(tweetText);
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+    public String getEditText(){
+        return editTextTweet.getText().toString();
+    }
 
 }

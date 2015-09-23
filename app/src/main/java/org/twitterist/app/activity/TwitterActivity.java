@@ -9,18 +9,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.TwitterApiClient;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.models.Tweet;
-import com.twitter.sdk.android.core.services.StatusesService;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
-import org.twitterist.app.controller.Controller;
 import org.twitterist.app.R;
+import org.twitterist.app.controller.Controller;
+import org.twitterist.app.controller.TwitterController;
 import org.twitterist.app.drawer.DrawerMain;
 import org.twitterist.app.model.Profile;
 
@@ -28,12 +22,15 @@ import org.twitterist.app.model.Profile;
 public class TwitterActivity extends DrawerMain {
 
     Controller controller;
-    ListView tweetList;
+    static ListView tweetList;
     EditText editTextTweetString;
     Button btnTweetSend;
     String tweetText;
-    TweetTimelineListAdapter adapter = null;
-    UserTimeline userTimeline;
+    static Context context;
+
+    TweetTimelineListAdapter adapter;
+    static UserTimeline userTimeline;
+
 
 
 
@@ -49,15 +46,15 @@ public class TwitterActivity extends DrawerMain {
         final View mView = inflater.inflate(R.layout.activity_twitter, null, false);
         mDrawerLayout.addView(mView, 0);
 
-        tweetList = (ListView) mView.findViewById(R.id.list);
-        editTextTweetString = (EditText) mView.findViewById(R.id.editText_tweet_String);
-        btnTweetSend = (Button) mView.findViewById(R.id.btn_send_tweet);
+        tweetList = (ListView) mView.findViewById(R.id.listview_tweets_twitter);
+        editTextTweetString = (EditText) mView.findViewById(R.id.editText_tweet_twitter);
+        btnTweetSend = (Button) mView.findViewById(R.id.btn_send_tweet_twitter);
 
-        initTimeline();
-
-
+        context = getApplicationContext();
         //set View on Controller
         controller.setCurrentView(mView);
+        initTimeline();
+
 
         btnTweetSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,8 +63,7 @@ public class TwitterActivity extends DrawerMain {
 
                 //If Text right length
                 if (tweetText.length() > 0 && tweetText.length() < 120) {
-                    sendTweet(tweetText);
-
+                    new TwitterController().sendTweet(tweetText);
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Bitte Ueberpruefe deine Eingaben", Toast.LENGTH_SHORT).show();
@@ -81,35 +77,12 @@ public class TwitterActivity extends DrawerMain {
 
     public void initTimeline() {
 
-
-        userTimeline = new UserTimeline.Builder()
+        userTimeline= new UserTimeline.Builder()
                 .userId(Profile.getUser().id)
                 .build();
-        adapter = new TweetTimelineListAdapter.Builder(this)
+        adapter = new TweetTimelineListAdapter.Builder(context)
                 .setTimeline(userTimeline)
                 .build();
         tweetList.setAdapter(adapter);
-
     }
-
-    public void sendTweet(String tweetText) {
-
-
-        TwitterApiClient twitterApiClient = Twitter.getApiClient();
-        StatusesService statusesService = twitterApiClient.getStatusesService();
-
-        statusesService.update(tweetText, null, null, null, null, null, null, null, new Callback<Tweet>() {
-            @Override
-            public void success(Result<Tweet> result) {
-                initTimeline();
-            }
-
-            @Override
-            public void failure(TwitterException e) {
-                Toast.makeText(getApplicationContext(),"Tweet can't send",Toast.LENGTH_LONG).show();
-                e.printStackTrace();
-            }
-        });
-    }
-
 }

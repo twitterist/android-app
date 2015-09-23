@@ -8,8 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Objects;
-
 /**
  * Created by marco.wuethrich on 21.09.2015.
  */
@@ -17,7 +15,6 @@ public class JSONParse {
 
     private JSONResponseObject jObjekt;
     JSONObject json = null;
-    String str = "";
     HttpResponse response;
     final String TAG_ROOT = "Entry";
     final String TAG_STATUS = "TAG_STATUS";
@@ -33,36 +30,13 @@ public class JSONParse {
     }
 
 
-    public JSONResponseObject getJSONObject(String url) {
-//        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-//                .detectAll()
-//                .penaltyLog()
-//                .penaltyDialog()
-//                .build());
-//
-//        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
-//                .penaltyLog()
-//                .build());
-//
-//        HttpClient myClient = new DefaultHttpClient();
-//        HttpPost myConnection = new HttpPost(url);
-//
-//
-//
-//        try {
-//            response = myClient.execute(myConnection);
-//            str = EntityUtils.toString(response.getEntity(), "UTF-8");
-//
-//        } catch (ClientProtocolException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+    public JSONResponseObject getJSONObject(String jsonText) {
+
         //Parse JSON from String to JObjects
-        if (str != null) {
+        if (jsonText != null) {
             try {
                 //Entry save Root TAG in a Array
-                json = new JSONObject(str);
+                json = new JSONObject(jsonText);
                 JSONArray jsonArray = json.optJSONArray(TAG_ROOT);
                 //Create own Object and fill it
                 jObjekt = new JSONResponseObject();
@@ -86,22 +60,21 @@ public class JSONParse {
     }
 
     //Create a JSONObject with a Tweet und UserID
-    public JSONObject writeJSONObject(String tweet[], int id[], int anzahl) {
+    public JSONObject writeJSONObject(String tweet, long id) {
         JSONObject obj, jsonObject = null;
         JSONArray jsonArray = new JSONArray();
 
         //Write JSON
-        for (int i = 0; i < anzahl; i++) {
-            obj = new JSONObject();
-            try {
-                obj.put(TAG_USERID, tweet[i]);
-                obj.put(TAG_TWEET, id[i]);
-            } catch (JSONException e) {
-                e.printStackTrace();
-                Log.e(LOG_TAG, "ERROR by Write JSON Obj");
-            }
-            jsonArray.put(obj);
+        obj = new JSONObject();
+        try {
+            obj.put(TAG_USERID, tweet);
+            obj.put(TAG_TWEET, id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e(LOG_TAG, "ERROR by Write JSON Obj");
         }
+        jsonArray.put(obj);
+
         //Put Array to Finally JSON Object with Root Tag
         try {
             jsonObject = new JSONObject();

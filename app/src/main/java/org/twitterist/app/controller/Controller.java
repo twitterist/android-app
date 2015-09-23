@@ -20,5 +20,4 @@ public class Controller {
     public void setCurrentView(View currentView) {
         Controller.currentView = currentView;
     }
-
 }
