@@ -31,7 +31,7 @@ public class LoginActivity extends DrawerMain {
     TwitterLoginButton loginButton;
     ImageButton imageButtonTwitter, imageButtonAboutUs, imageButtonAnalysis;
     ImageView twitterImageProfile;
-    TextView txtViewProfileName, txtViewTwitter, txtViewAnalysis, txtViewAboutUs ;
+    TextView txtViewProfileName, txtViewTwitter, txtViewAnalysis, txtViewAboutUs;
 
 
     @Override
@@ -39,7 +39,7 @@ public class LoginActivity extends DrawerMain {
         super.onCreate(savedInstanceState);
         controller = new Controller();
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View mView = inflater.inflate(R.layout.activity_login, null ,false);
+        final View mView = inflater.inflate(R.layout.activity_login, null, false);
         controller.setCurrentView(mView);
         mDrawerLayout.addView(mView, 0);
         //UI
@@ -54,14 +54,14 @@ public class LoginActivity extends DrawerMain {
         txtViewAboutUs = (TextView) mView.findViewById(R.id.textViewAboutUs);
 
 
-        if (Profile.getUser() == null){
+        if (Profile.getUser() == null) {
             initNotLogin();
-        }else {
+        } else {
             initIsLogin();
         }
         //listener
-        twitterImageListener(imageButtonTwitter,mView);
-        analysisImageListener(imageButtonAnalysis,mView);
+        twitterImageListener(imageButtonTwitter, mView);
+        analysisImageListener(imageButtonAnalysis, mView);
         aboutUsImageListener(imageButtonAboutUs, mView);
     }
 
@@ -72,7 +72,7 @@ public class LoginActivity extends DrawerMain {
         loginButton.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void initNotLogin(){
+    public void initNotLogin() {
 
 
         txtViewAboutUs.setVisibility(View.GONE);
@@ -85,8 +85,10 @@ public class LoginActivity extends DrawerMain {
         imageButtonTwitter.setVisibility(View.GONE);
         //Login
         loginButton.setCallback(new Callback<TwitterSession>() {
+
             @Override
             public void success(Result<TwitterSession> result) {
+
                 //Save Session in Profile
                 Profile.setSession(result.data);
 
@@ -107,6 +109,7 @@ public class LoginActivity extends DrawerMain {
                                 changeUserProfile();
                             }
                         });
+
             }
 
             @Override
@@ -116,14 +119,14 @@ public class LoginActivity extends DrawerMain {
         });
     }
 
-    public void initIsLogin(){
+    public void initIsLogin() {
         changeUserProfile();
 
 
     }
 
 
-    public void twitterImageListener(ImageButton imageButton, final View mView){
+    public void twitterImageListener(ImageButton imageButton, final View mView) {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +135,8 @@ public class LoginActivity extends DrawerMain {
             }
         });
     }
-    public void analysisImageListener(ImageButton imageButton, final View mView){
+
+    public void analysisImageListener(ImageButton imageButton, final View mView) {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,7 +145,8 @@ public class LoginActivity extends DrawerMain {
             }
         });
     }
-    public void aboutUsImageListener(ImageButton imageButton, final View mView){
+
+    public void aboutUsImageListener(ImageButton imageButton, final View mView) {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,15 +157,15 @@ public class LoginActivity extends DrawerMain {
     }
 
 
-    public void changeUserProfile(){
+    public void changeUserProfile() {
 
         //When Profile is Loaded
-        if (Profile.getUser() != null){
+        if (Profile.getUser() != null) {
             //Load UserImage
             Picasso.with(getApplicationContext())
                     .load(Profile.getUser().profileImageUrl)
                     .transform(new CircleTransform())
-                    .resize(100,100)
+                    .resize(100, 100)
                     .into(twitterImageProfile);
 
             //Set UserName
@@ -179,7 +184,7 @@ public class LoginActivity extends DrawerMain {
 
     }
 
-    public void logout(){
+    public void logout() {
 
         //delet Profile
         Profile.setUser(null);

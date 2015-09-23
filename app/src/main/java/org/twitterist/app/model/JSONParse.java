@@ -28,8 +28,8 @@ public class JSONParse {
     final String LOG_TAG = "JSON";
 
 
-    public JSONParse(String url) {
-        getJSONObject(url);
+    //Default Constructor
+    public JSONParse() {
     }
 
 

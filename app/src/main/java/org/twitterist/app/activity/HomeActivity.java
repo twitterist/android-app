@@ -32,11 +32,12 @@ public class HomeActivity extends DrawerMain {
     ImageButton iBTwitter, iBAnalysis, iBAboutUs;
     IntentController intentController;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         controller = new Controller();
-        intentController = new IntentController();
+
 
         //Twitter AuthConfig Init
         TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY), getString(R.string.TWITTER_CONSUMER_SECRET));
@@ -66,7 +67,6 @@ public class HomeActivity extends DrawerMain {
         iBTwitter.setOnClickListener(new ImageButtonListener());
         iBAnalysis.setOnClickListener(new ImageButtonListener());
         iBAboutUs.setOnClickListener(new ImageButtonListener());
-
 
     }
 
