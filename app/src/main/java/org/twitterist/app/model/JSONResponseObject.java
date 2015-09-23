@@ -3,12 +3,13 @@ package org.twitterist.app.model;
 /**
  * Created by marco.wuethrich on 21.09.2015.
  */
-public class JObject {
+public class JSONResponseObject {
 
     private String status = null;
     private Double result = 0D;
 
-    public JObject() {
+    //Default Constructor
+    public JSONResponseObject() {
     }
 
     public String getStatus() {
