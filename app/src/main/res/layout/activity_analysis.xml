@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_customer"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.twitterist.app.activity.AnalysisActivity"
-    android:background="#8562d8ff">
+    tools:context="org.twitterist.app.activity.AnalysisActivity">
 
     <TextView
         android:id="@+id/textView_info"
@@ -40,7 +40,8 @@
         android:id="@+id/btn_send_analysis_analysis"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/editText_tweet_analysis"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_design"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -51,7 +52,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/editText_tweet_analysis"
         android:layout_alignStart="@+id/editText_tweet_analysis"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/btn_design"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -61,6 +63,7 @@
         android:layout_alignTop="@+id/btn_twittern_analysis"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_design"/>
 
 </RelativeLayout>

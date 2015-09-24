@@ -53,7 +53,7 @@ public class HomeActivity extends DrawerMain {
 
 
         //UI Elements
-        intoTextWeb = (WebView) findViewById(R.id.introText);
+        intoTextWeb = (WebView) findViewById(R.id.WebView_IntroText_Home);
         iBTwitter = (ImageButton) findViewById(R.id.imageButton_Twitter_Home);
         iBAnalysis = (ImageButton) findViewById(R.id.imageButton_Analysis_Home);
         iBAboutUs = (ImageButton) findViewById(R.id.imageButton_AboutUs_Home);

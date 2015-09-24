@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:background="#8562d8ff"
+    android:background="@drawable/background_customer"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -23,32 +23,32 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Twitterist"
             android:textColor="#44a62e"
-            android:gravity="center"
             android:textSize="50sp" />
 
         <TextView
-            android:id="@+id/subTitle"
+            android:id="@+id/textView_subTitle_Home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Machine Learning powered analysis of your Tweets"
-            android:textColor="#4cc730"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:layout_below="@+id/title"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp" />
+            android:layout_below="@+id/title"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Machine Learning powered analysis of your Tweets"
+            android:textColor="#4cc730"
+            android:textSize="18sp" />
 
         <WebView
-            android:id="@+id/introText"
+            android:id="@+id/WebView_IntroText_Home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/view_rounded"
-            android:layout_below="@+id/subTitle"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView_subTitle_Home"
+            android:background="@drawable/view_rounded" />
 
 
         <!-- Twitter Button-->
@@ -69,35 +69,35 @@
             android:id="@+id/imageButton_AboutUs_Home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00000000"
-            android:src="@mipmap/ic_search_icon"
-            android:gravity="center"
             android:layout_above="@+id/imageButton_Analysis_Home"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="40dp" />
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="40dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:src="@mipmap/ic_search_icon" />
 
         <ImageButton
             android:id="@+id/imageButton_Analysis_Home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="#00000000"
-            android:src="@mipmap/ic_serach_icon"
-            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:gravity="center"
+            android:src="@mipmap/ic_serach_icon" />
 
         <ImageButton
             android:id="@+id/imageButton_Twitter_Home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00000000"
-            android:src="@mipmap/ic_twitter_icon_blue"
-            android:layout_below="@+id/imageButton_Analysis_Home"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="40dp" />
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/imageButton_Analysis_Home"
+            android:layout_marginTop="40dp"
+            android:background="#00000000"
+            android:src="@mipmap/ic_twitter_icon_blue" />
     </RelativeLayout>
 
 
