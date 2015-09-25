@@ -26,7 +26,6 @@
             android:layout_alignTop="@+id/btn_send_tweet_twitter"
             android:layout_toLeftOf="@+id/btn_send_tweet_twitter"
             android:layout_toStartOf="@+id/btn_send_tweet_twitter"
-            android:background="@drawable/view_rounded"
             android:gravity="center_vertical"
             android:hint="Was gibt&apos;s Neues?"
             android:paddingLeft="5dp"

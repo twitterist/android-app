@@ -36,7 +36,7 @@ public class ImageButtonListener implements ImageView.OnClickListener {
                     context.startActivity(intentController.getTwitterIntent(context));
                 } else {
                     context.startActivity(intentController.getLoginInten(context));
-                    Toast.makeText(context, "You must be Login", Toast.LENGTH_SHORT).show();
+
                 }
                 break;
 
@@ -50,7 +50,7 @@ public class ImageButtonListener implements ImageView.OnClickListener {
                     context.startActivity(intentController.getAnalysisInten(context));
                 } else {
                     context.startActivity(intentController.getLoginInten(context));
-                    Toast.makeText(context, "You must be Login", Toast.LENGTH_SHORT).show();
+
                 }
                 break;
 

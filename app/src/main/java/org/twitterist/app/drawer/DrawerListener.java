@@ -88,7 +88,8 @@ public class DrawerListener implements ListView.OnItemClickListener {
 
 
     public void mustBeLogin(Context context) {
-        this.context.startActivity(intentController.getLoginInten(context));
-        Toast.makeText(context, "You must be Login", Toast.LENGTH_SHORT).show();
+
+        context.startActivity(intentController.getLoginInten(context));
+
     }
 }
