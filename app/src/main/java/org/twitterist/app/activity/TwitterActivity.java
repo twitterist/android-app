@@ -39,7 +39,6 @@ public class TwitterActivity extends DrawerMain {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         //Drawer
         controller = new Controller();
         // textView = (TextView) findViewById(R.id.twitter_activity);
@@ -73,6 +72,8 @@ public class TwitterActivity extends DrawerMain {
 
             }
         });
+
+
 
 
     }

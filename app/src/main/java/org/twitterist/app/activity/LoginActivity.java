@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -158,6 +159,8 @@ public class LoginActivity extends DrawerMain {
 
 
     public void changeUserProfile() {
+        //Show Logout Btn on ActionBar
+        new Controller().logoutButtonVisible();
 
         //When Profile is Loaded
         if (Profile.getUser() != null) {
@@ -181,7 +184,6 @@ public class LoginActivity extends DrawerMain {
         imageButtonAboutUs.setVisibility(View.VISIBLE);
         imageButtonAnalysis.setVisibility(View.VISIBLE);
         imageButtonTwitter.setVisibility(View.VISIBLE);
-
     }
 
     public void logout() {

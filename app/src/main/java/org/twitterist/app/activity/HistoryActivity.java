@@ -21,8 +21,6 @@ public class HistoryActivity extends DrawerMain {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         controller = new Controller();
-
-
         textView = (TextView) findViewById(R.id.history_activity);
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -33,6 +31,7 @@ public class HistoryActivity extends DrawerMain {
         //set View on Controller
         controller.setCurrentView(mView);
         //  Controller.setActivity(this);
+
     }
 
 

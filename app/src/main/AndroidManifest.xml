@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.twitterist.app" >
+    package="org.twitterist.app">
 
     <!-- Permission - Internet Connect -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,39 +10,56 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activity.HomeActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".drawer.DrawerMain"
-            android:label="@string/title_activity_home" >
+            android:label="@string/title_activity_home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.twitterist.app.drawer.DrawerMain" />
         </activity>
         <activity
             android:name=".activity.TwitterActivity"
-            android:label="@string/title_activity_twitter" >
+            android:label="@string/title_activity_twitter">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.twitterist.app.drawer.DrawerMain" />
         </activity>
         <activity
             android:name=".activity.HistoryActivity"
-            android:label="@string/title_activity_history" >
+            android:label="@string/title_activity_history">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.twitterist.app.drawer.DrawerMain" />
         </activity>
         <activity
             android:name=".activity.AnalysisActivity"
-            android:label="@string/title_activity_analysis" >
+            android:label="@string/title_activity_analysis">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.twitterist.app.drawer.DrawerMain" />
         </activity>
         <activity
             android:name=".activity.AboutUsActivity"
-            android:label="@string/title_activity_about_us" >
+            android:label="@string/title_activity_about_us">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.twitterist.app.drawer.DrawerMain" />
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.twitterist.app.drawer.DrawerMain" />
         </activity>
 
         <meta-data

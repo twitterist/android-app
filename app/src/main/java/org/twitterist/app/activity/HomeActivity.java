@@ -4,9 +4,11 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -38,7 +40,6 @@ public class HomeActivity extends DrawerMain {
         super.onCreate(savedInstanceState);
         controller = new Controller();
 
-
         //Twitter AuthConfig Init
         TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.TWITTER_CONSUMER_KEY), getString(R.string.TWITTER_CONSUMER_SECRET));
         Fabric.with(this, new Twitter(authConfig));
@@ -61,7 +62,6 @@ public class HomeActivity extends DrawerMain {
         intoTextWeb.getSettings().setJavaScriptEnabled(true);
         intoTextWeb.setBackgroundColor(Color.TRANSPARENT);
         intoTextWeb.loadData(readTextFromResource(R.raw.index_start_page), "text/html", "utf8");
-
 
         //Listeners
         iBTwitter.setOnClickListener(new ImageButtonListener());

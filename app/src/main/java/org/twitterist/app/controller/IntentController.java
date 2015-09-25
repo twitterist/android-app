@@ -20,7 +20,7 @@ public class IntentController {
     private static Intent twitterIntent;
     private static Intent historyIntent;
     private static Intent aboutUsIntent;
-    private static Intent loginInten;
+     public static Intent loginInten;
 
 
 
