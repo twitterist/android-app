@@ -2,13 +2,14 @@ package org.twitterist.app.controller;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 
 import org.twitterist.app.activity.AboutUsActivity;
 import org.twitterist.app.activity.AnalysisActivity;
 import org.twitterist.app.activity.HistoryActivity;
 import org.twitterist.app.activity.HomeActivity;
 import org.twitterist.app.activity.LoginActivity;
-import org.twitterist.app.activity.TwitterActivity;
+import org.twitterist.app.model.Profile;
 
 /**
  * Created by marco.wuethrich on 22.09.2015.
@@ -49,7 +50,7 @@ public class IntentController {
     public Intent getTwitterIntent(Context context) {
 
         if (twitterIntent == null){
-            return twitterIntent = new Intent(context, TwitterActivity.class);
+            return ifTwitterPossible(context);
         }else {
             return twitterIntent;
         }
@@ -79,6 +80,20 @@ public class IntentController {
         }
     }
 
-}
+    public static Intent ifTwitterPossible(Context context) {
 
+        long userID = Profile.getSession().getUserId();
+        try {
+            // get the Twitter app if possible
+            context.getPackageManager().getPackageInfo("com.twitter.android", 0);
+            twitterIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?user_id=" + userID));
+            twitterIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        } catch (Exception e) {
+            // no Twitter app, revert to browser
+            twitterIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/"+userID));
+        }
+        return twitterIntent;
+    }
+
+}
 

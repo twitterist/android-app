@@ -27,13 +27,6 @@
                 android:value="org.twitterist.app.drawer.DrawerMain" />
         </activity>
         <activity
-            android:name=".activity.TwitterActivity"
-            android:label="@string/title_activity_twitter">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.twitterist.app.drawer.DrawerMain" />
-        </activity>
-        <activity
             android:name=".activity.HistoryActivity"
             android:label="@string/title_activity_history">
             <meta-data

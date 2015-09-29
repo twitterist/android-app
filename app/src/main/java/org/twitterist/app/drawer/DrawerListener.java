@@ -10,8 +10,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import org.twitterist.app.activity.LoginActivity;
 import org.twitterist.app.controller.Controller;
 import org.twitterist.app.controller.IntentController;
 import org.twitterist.app.model.Profile;
@@ -78,7 +78,13 @@ public class DrawerListener implements ListView.OnItemClickListener {
                 break;
             case 5:
                 //Login
-                context.startActivity(intentController.getLoginInten(context));
+                if(Profile.getSession() == null){
+                    context.startActivity(intentController.getLoginInten(context));
+                }
+                else {
+                    new LoginActivity().showAlertDialogForLogout();
+                }
+
                 break;
             default:
                 break;

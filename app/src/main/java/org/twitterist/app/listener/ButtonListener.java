@@ -7,7 +7,6 @@ import org.twitterist.app.R;
 import org.twitterist.app.activity.AnalysisActivity;
 import org.twitterist.app.controller.Controller;
 import org.twitterist.app.controller.IntentController;
-import org.twitterist.app.controller.TwitterController;
 
 /**
  * Created by marcowuthrich on 23.09.15.
@@ -32,8 +31,7 @@ public class ButtonListener implements View.OnClickListener {
                 break;
             case (R.id.btn_twittern_analysis):
                 //Send Tweet and start Twitter Activity
-                context.startActivity(intcont.getTwitterIntent(context));
-                new TwitterController().sendTweet(new AnalysisActivity().getEditText());
+                // TODO STart Analysis
                 break;
             case (R.id.btn_history_analysis):
                 //Start History Activity

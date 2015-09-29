@@ -24,5 +24,4 @@ public class ActionbarListener implements View.OnTouchListener{
 
         return false;
     }
-
 }

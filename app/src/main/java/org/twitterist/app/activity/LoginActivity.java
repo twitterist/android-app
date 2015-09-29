@@ -1,11 +1,12 @@
 package org.twitterist.app.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -20,29 +21,31 @@ import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 import com.twitter.sdk.android.core.models.User;
 
-import org.twitterist.app.controller.Controller;
 import org.twitterist.app.R;
+import org.twitterist.app.controller.Controller;
+import org.twitterist.app.controller.IntentController;
 import org.twitterist.app.drawer.DrawerMain;
+import org.twitterist.app.listener.ImageButtonListener;
 import org.twitterist.app.model.CircleTransform;
 import org.twitterist.app.model.Profile;
 
 public class LoginActivity extends DrawerMain {
 
-    Controller controller;
+    Context context;
     TwitterLoginButton loginButton;
     ImageButton imageButtonTwitter, imageButtonAboutUs, imageButtonAnalysis;
     ImageView twitterImageProfile;
     TextView txtViewProfileName, txtViewTwitter, txtViewAnalysis, txtViewAboutUs;
 
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        controller = new Controller();
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View mView = inflater.inflate(R.layout.activity_login, null, false);
-        controller.setCurrentView(mView);
+        new Controller().setCurrentView((mView));
+        context = new Controller().getCurrentView().getContext();
         mDrawerLayout.addView(mView, 0);
+
         //UI
         twitterImageProfile = (ImageView) mView.findViewById(R.id.imageView_user_profile);
         txtViewProfileName = (TextView) mView.findViewById(R.id.txtViewProfileName);
@@ -55,15 +58,17 @@ public class LoginActivity extends DrawerMain {
         txtViewAboutUs = (TextView) mView.findViewById(R.id.textViewAboutUs);
 
 
+        //Init
         if (Profile.getUser() == null) {
             initNotLogin();
         } else {
-            initIsLogin();
+            //Change to Profile
+            initUserProfile();
         }
-        //listener
-        twitterImageListener(imageButtonTwitter, mView);
-        analysisImageListener(imageButtonAnalysis, mView);
-        aboutUsImageListener(imageButtonAboutUs, mView);
+        //Listener
+        imageButtonAboutUs.setOnClickListener(new ImageButtonListener());
+        imageButtonAnalysis.setOnClickListener(new ImageButtonListener());
+        imageButtonTwitter.setOnClickListener(new ImageButtonListener());
     }
 
 
@@ -74,17 +79,16 @@ public class LoginActivity extends DrawerMain {
     }
 
     public void initNotLogin() {
-
-
+        //UI
         txtViewAboutUs.setVisibility(View.GONE);
         txtViewAnalysis.setVisibility(View.GONE);
         txtViewTwitter.setVisibility(View.GONE);
 
-
         imageButtonAboutUs.setVisibility(View.GONE);
         imageButtonAnalysis.setVisibility(View.GONE);
         imageButtonTwitter.setVisibility(View.GONE);
-        //Login
+
+        //Login Listener
         loginButton.setCallback(new Callback<TwitterSession>() {
 
             @Override
@@ -96,7 +100,6 @@ public class LoginActivity extends DrawerMain {
                 //Twitter Client
                 Twitter.getApiClient(Profile.getSession()).getAccountService()
                         .verifyCredentials(true, false, new Callback<User>() {
-
                             @Override
                             public void failure(TwitterException e) {
                                 Log.e("Login", e.getMessage());
@@ -106,11 +109,9 @@ public class LoginActivity extends DrawerMain {
                             public void success(Result<User> userResult) {
                                 //Save User
                                 Profile.setUser(userResult.data);
-                                //Change to Profile
-                                changeUserProfile();
+                                startActivity(new IntentController().getLoginInten(context));
                             }
                         });
-
             }
 
             @Override
@@ -120,47 +121,10 @@ public class LoginActivity extends DrawerMain {
         });
     }
 
-    public void initIsLogin() {
-        changeUserProfile();
-
-
-    }
-
-
-    public void twitterImageListener(ImageButton imageButton, final View mView) {
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mView.getContext(), TwitterActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    public void analysisImageListener(ImageButton imageButton, final View mView) {
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mView.getContext(), AnalysisActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    public void aboutUsImageListener(ImageButton imageButton, final View mView) {
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mView.getContext(), AboutUsActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-
-    public void changeUserProfile() {
+    public void initUserProfile() {
         //Show Logout Btn on ActionBar
         new Controller().logoutButtonVisible();
+        new DrawerMain();
 
         //When Profile is Loaded
         if (Profile.getUser() != null) {
@@ -174,8 +138,8 @@ public class LoginActivity extends DrawerMain {
             //Set UserName
             txtViewProfileName.setText(Profile.getUser().name);
         }
+        //UI
         loginButton.setVisibility(View.GONE);
-
 
         txtViewAboutUs.setVisibility(View.VISIBLE);
         txtViewAnalysis.setVisibility(View.VISIBLE);
@@ -187,8 +151,7 @@ public class LoginActivity extends DrawerMain {
     }
 
     public void logout() {
-
-        //delet Profile
+        //delete Profile preferences
         Profile.setUser(null);
         Profile.setSession(null);
     }
@@ -197,4 +160,35 @@ public class LoginActivity extends DrawerMain {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
+    public void showAlertDialogForLogout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(new Controller().getCurrentView().getContext());
+
+        builder.setTitle("Logout");
+        builder.setMessage("Do you really want to log out?");
+
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                //Hidden Logout Btn on ActionBar, Logout
+                new LoginActivity().logout();
+                new Controller().logoutButtonVisible();
+                Context context = new Controller().getCurrentView().getContext();
+                context.startActivity(new IntentController().getHomeIntent(context));
+                dialog.dismiss();
+            }
+
+        });
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Do nothing
+                dialog.dismiss();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
 }
