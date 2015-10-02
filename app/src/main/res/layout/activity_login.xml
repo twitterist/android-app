@@ -9,142 +9,120 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="org.twitterist.app.activity.LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView_user_profile"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="81dp"
+        android:background="@drawable/circle_transparent_userimg"
+        android:src="@mipmap/ic_default_user_icon" />
+
+
+    <TextView
+        android:id="@+id/txtViewProfileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView_user_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp" />
+
 
     <RelativeLayout
-        android:id="@+id/Profile"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/frameLayout_Twitter_Login_btn">
+        android:id="@+id/relativeTwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeAnalysis"
+        android:layout_centerHorizontal="true">
 
-        <ImageView
-            android:id="@+id/imageView_user_profile"
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_alignParentTop="true"
+        <ImageButton
+            android:id="@+id/imageButton_Twitter_Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal|top"
-            android:layout_marginTop="81dp"
-            android:background="@drawable/circle_transparent_userimg"
-            android:src="@mipmap/ic_default_user_icon" />
-
+            android:src="@mipmap/ic_twitter_icon_blue" />
 
         <TextView
-            android:id="@+id/txtViewProfileName"
+            android:id="@+id/textViewTwitter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView_user_profile"
+            android:layout_below="@id/imageButton_Twitter_Login"
+            android:text="Twitter" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeAnalysis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView_user_profile"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="50dp">
+
+        <ImageButton
+            android:id="@+id/imageButton_Analysis_Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp" />
+            android:background="@drawable/backgroud_imagebutton"
+            android:src="@mipmap/ic_serach_icon" />
 
-        <RelativeLayout
-            android:id="@+id/relativeTwitter"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true">
-
-            <ImageButton
-                android:id="@+id/imageButton_Twitter_Login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textViewTwitter"
-                android:layout_centerHorizontal="true"
-                android:background="#00000000"
-                android:src="@mipmap/ic_twitter_icon_blue" />
-
-            <TextView
-                android:id="@+id/textViewTwitter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageButton_Twitter_Login"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignStart="@+id/imageButton_Twitter_Login"
-                android:text="Twitter" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relativeAnalysis"
+        <TextView
+            android:id="@+id/textViewAnalysis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/relativeTwitter"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="39dp">
-
-            <ImageButton
-                android:id="@+id/imageButton_Analysis_Login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/backgroud_imagebutton"
-                android:src="@mipmap/ic_serach_icon" />
-
-            <TextView
-                android:id="@+id/textViewAnalysis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imageButton_Analysis_Login"
-                android:layout_centerHorizontal="true"
-                android:text="Analysis" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/relativeAboutUs"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_above="@+id/relativeTwitter"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="30dp">
-
-            <ImageButton
-                android:id="@+id/imageButton_AboutUS_Login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:background="#00000000"
-                android:src="@mipmap/ic_search_icon" />
-
-            <TextView
-                android:id="@+id/textViewAboutUs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imageButton_AboutUS_Login"
-                android:layout_centerHorizontal="true"
-                android:text="About Us" />
-
-
-        </RelativeLayout>
-
+            android:layout_below="@+id/imageButton_Analysis_Login"
+            android:layout_centerHorizontal="true"
+            android:text="Analysis" />
 
     </RelativeLayout>
 
 
-    <FrameLayout
-        android:id="@+id/frameLayout_Twitter_Login_btn"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="10dp">
+    <RelativeLayout
+        android:id="@+id/relativeAboutUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView_user_profile"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp">
 
-        <com.twitter.sdk.android.core.identity.TwitterLoginButton
-            android:id="@+id/twitter_login_button"
+        <ImageButton
+            android:id="@+id/imageButton_AboutUS_Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom" />
+            android:layout_centerHorizontal="true"
+            android:background="#00000000"
+            android:src="@mipmap/ic_search_icon" />
 
+        <TextView
+            android:id="@+id/textViewAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageButton_AboutUS_Login"
+            android:layout_centerHorizontal="true"
+            android:text="About Us" />
 
-    </FrameLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/loginFragment_Login"
+        layout="@layout/login_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeTwitter"
+        android:layout_centerHorizontal="true">
+
+    </include>
 
 
 </RelativeLayout>

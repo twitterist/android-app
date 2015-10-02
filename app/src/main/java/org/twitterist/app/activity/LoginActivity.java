@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -36,6 +37,7 @@ public class LoginActivity extends DrawerMain {
     ImageButton imageButtonTwitter, imageButtonAboutUs, imageButtonAnalysis;
     ImageView twitterImageProfile;
     TextView txtViewProfileName, txtViewTwitter, txtViewAnalysis, txtViewAboutUs;
+    FrameLayout loginframe;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -56,6 +58,7 @@ public class LoginActivity extends DrawerMain {
         txtViewTwitter = (TextView) mView.findViewById(R.id.textViewTwitter);
         txtViewAnalysis = (TextView) mView.findViewById(R.id.textViewAnalysis);
         txtViewAboutUs = (TextView) mView.findViewById(R.id.textViewAboutUs);
+        loginframe = (FrameLayout) mView.findViewById(R.id.frameLayout_Twitter_Login_btn);
 
 
         //Init
@@ -87,6 +90,8 @@ public class LoginActivity extends DrawerMain {
         imageButtonAboutUs.setVisibility(View.GONE);
         imageButtonAnalysis.setVisibility(View.GONE);
         imageButtonTwitter.setVisibility(View.GONE);
+
+        loginframe.setVisibility(View.VISIBLE);
 
         //Login Listener
         loginButton.setCallback(new Callback<TwitterSession>() {
@@ -148,6 +153,8 @@ public class LoginActivity extends DrawerMain {
         imageButtonAboutUs.setVisibility(View.VISIBLE);
         imageButtonAnalysis.setVisibility(View.VISIBLE);
         imageButtonTwitter.setVisibility(View.VISIBLE);
+
+        loginframe.setVisibility(View.GONE);
     }
 
     public void logout() {
